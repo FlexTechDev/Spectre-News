@@ -1,0 +1,8 @@
+.App {
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  margin-top: 80px; /* Add this line to position the slider under the home bar */
+}

@@ -1,0 +1,50 @@
+.panel {
+  border-radius: 10px;
+  background-color: rgb(245, 245, 245);
+  padding: 20px;
+  max-width: 90%;
+  margin: 20px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.panel h2 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.panel p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.read-more-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+  background-color: #0056b3;
+}
+.panel {
+  width: 45%; /* Adjust the width of the panel */
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.panel-image {
+  max-width: 50%; /* Set a maximum width for the image, you can adjust the percentage to your preference */
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
