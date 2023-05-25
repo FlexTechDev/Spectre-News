@@ -34,21 +34,24 @@ const NewsFeed = ({ searchQuery, politicalView }) => {
     setArticles(data.articles);
   };
 
-  return (
-    <div className="news-feed">
-      <div className="news-feed-container">
-        {articles.map((article, index) => (
-          <Panel
-            key={index}
-            title={article.title}
-            content={article.description}
-            url={article.url}
-            imageUrl={article.urlToImage}
-          />
-        ))}
+  if(articles)
+  {
+    return (
+      <div className="news-feed">
+        <div className="news-feed-container">
+          {articles.map((article, index) => (
+            <Panel
+              key={index}
+              title={article.title}
+              content={article.description}
+              url={article.url}
+              imageUrl={article.urlToImage}
+            />
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default NewsFeed;
