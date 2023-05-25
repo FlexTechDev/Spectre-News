@@ -33,13 +33,15 @@
 .read-more-button:hover {
   background-color: #0056b3;
 }
+
 .panel {
   width: 45%; /* Adjust the width of the panel */
   background-color: #f8f9fa;
   border-radius: 10px;
+  border: 3px solid rgb(194, 194, 194);
   padding: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 .panel-image {
   max-width: 50%; /* Set a maximum width for the image, you can adjust the percentage to your preference */
