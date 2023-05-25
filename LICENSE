@@ -1,50 +1,41 @@
-Academic Open License - Extended Version 1.0
+PRIVATE LICENSE AGREEMENT
 
-This license agreement ("Agreement") is entered into by and between Michael Teschner and Michael Safar ("Owners"), collectively referred to as "Parties."
+This Private License Agreement ("Agreement") is entered into by and between Michael Safar ("Licensor") and Michael Teschner ("Licensee"), collectively referred to as "Parties".
 
-WHEREAS, Owners are the original owners and creators of the software and associated documentation files ("Software") subject to this Agreement;
+WHEREAS, Licensor and Licensee are the original owners of the software and associated documentation files ("Software") subject to this Agreement;
 
-WHEREAS, Owners desire to grant certain rights to use, modify, reproduce, distribute, and sublicense the Software subject to the terms and conditions set forth herein;
+WHEREAS, Licensor desires to grant Licensee certain rights to use the Software subject to the terms and conditions set forth herein;
 
 NOW, THEREFORE, in consideration of the mutual promises and covenants contained herein, the Parties agree as follows:
 
-1. Grant of License
-   1.1 License Grant: Subject to the terms and conditions of this Agreement, Owners hereby grant any person obtaining a copy of the Software ("Licensee") a non-exclusive, non-transferable, worldwide, royalty-free license to use, copy, modify, merge, publish, distribute, sublicense, and sell copies of the Software, solely for academic, research, and personal purposes.
-   1.2 Scope of Use: Licensee's use of the Software shall be limited to educational, non-commercial, and non-profit purposes.
-   1.3 No Implied Licenses: This Agreement does not grant Licensee any rights or licenses to any patents, copyrights, trade secrets, trademarks, or any other intellectual property rights owned or controlled by Owners, except for the rights expressly granted herein.
+1. License Grant
+   1.1 License: Licensor hereby grants Licensee a non-exclusive, non-transferable, revocable license to use the Software for their personal use only.
+   1.2 Restrictions: Licensee shall not, without the explicit written permission of Licensor:
+       (a) Sell, sublicense, or otherwise distribute the Software to any third party;
+       (b) Modify, reverse engineer, decompile, or disassemble the Software;
+       (c) Use the Software for any commercial or public purposes.
 
-2. Restrictions and Obligations
-   2.1 Prohibited Uses: Licensee shall not, directly or indirectly:
-       (a) Use the Software for any illegal, unauthorized, or malicious purposes;
-       (b) Remove, alter, or obscure any proprietary notices, labels, or marks on the Software;
-       (c) Reverse engineer, decompile, disassemble, or otherwise attempt to derive the source code of the Software, except as permitted by applicable law;
-       (d) Publish or disclose any benchmark, performance, or comparative test results related to the Software without Owners' prior written consent;
-       (e) Use the Software to develop a competing software product or incorporate it into a commercial product without Owners' explicit permission;
-       (f) Violate any third-party rights, including intellectual property rights, privacy rights, or contractual obligations, when using the Software.
+2. Ownership and Intellectual Property
+   2.1 Ownership: Licensor and Licensee jointly retain all right, title, and interest in and to the Software, including all intellectual property rights.
+   2.2 Confidentiality: Licensee agrees to treat the Software as confidential information and shall not disclose or make the Software available to any third party without the prior written consent of Licensor.
 
-3. Intellectual Property Rights
-   3.1 Ownership: Owners retain all right, title, and interest in and to the Software, including all intellectual property rights therein. This Agreement does not transfer ownership of the Software to Licensee.
-   3.2 Feedback: Licensee may, at its discretion, provide feedback, suggestions, or improvements regarding the Software to Owners. Licensee hereby grants Owners a non-exclusive, perpetual, irrevocable, worldwide, royalty-free license to use, incorporate, and commercialize any such feedback without any obligation or compensation to Licensee.
-   3.3 Attribution: Licensee agrees to include the following notice in all copies and modifications of the Software: "[Software Title], developed by Michael Teschner and Michael Safar, used under the terms of the Academic Open License - Extended Version 1.0."
+3. Disclaimer and Limitation of Liability
+   3.1 No Warranty: The Software is provided "as is" without any warranty, express or implied. Licensor disclaims all warranties, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement.
+   3.2 Limitation of Liability: In no event shall Licensor be liable for any direct, indirect, incidental, special, exemplary, or consequential damages arising out of or in connection with the use or performance of the Software.
 
-4. Disclaimer of Warranty
-   4.1 No Warranty: THE SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. OWNERS DISCLAIM ALL WARRANTIES, WHETHER EXPRESS OR IMPLIED, REGARDING THE SOFTWARE AND ITS USE.
-   4.2 Limitation of Liability: IN NO EVENT SHALL OWNERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. OWNERS SHALL NOT BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, OR USE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+4. Termination
+   4.1 Termination: Either Party may terminate this Agreement at any time by providing written notice to the other Party. Upon termination, Licensee shall immediately cease all use of the Software.
 
-Termination
-5.1 Termination by Owners: Owners may, at their sole discretion, terminate this Agreement if Licensee breaches any of its terms or conditions. Upon termination, Licensee shall cease all use of the Software and destroy any copies in its possession or control.
-5.2 Survival: The provisions of this Agreement that by their nature extend beyond the termination of this Agreement shall survive the termination.
+5. Governing Law
+   5.1 Jurisdiction: This Agreement shall be governed by and construed in accordance with the laws of [Jurisdiction]. Any disputes arising under or in connection with this Agreement shall be subject to the exclusive jurisdiction of the courts in [Jurisdiction].
 
-Governing Law
-6.1 Jurisdiction: This Agreement shall be governed by and construed in accordance with the laws of the jurisdiction in which Owners reside. Any disputes arising out of or in connection with this Agreement shall be subject to the exclusive jurisdiction of the courts in that jurisdiction.
+6. Entire Agreement
+   6.1 Entire Agreement: This Agreement constitutes the entire agreement between the Parties and supersedes all prior or contemporaneous agreements, understandings, or representations, whether oral or written.
 
-Entire Agreement
-7.1 Entire Agreement: This Agreement constitutes the entire agreement between the Parties regarding the subject matter herein and supersedes all prior or contemporaneous agreements, understandings, and representations, whether oral or written.
+By using the Software, Licensee acknowledges that they have read and understood this Agreement and agree to be bound by its terms and conditions.
 
-Amendments
-8.1 Amendments: No amendment, modification, or waiver of any provision of this Agreement shall be valid unless in writing and signed by both Parties.
+[MICHAEL SAFAR]
 
-Severability
-9.1 Severability: If any provision of this Agreement is held to be invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect.
+[MICHAEL TESCHNER]
 
-By using, copying, or distributing the Software, Licensee acknowledges that it has read and understood this Agreement and agrees to be bound by its terms and conditions.
+Date: [5/25/2023]
