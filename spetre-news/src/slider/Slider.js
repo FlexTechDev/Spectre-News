@@ -17,7 +17,7 @@ function Slider({onChange}) {
 
   return (
     <div className="slider-container">
-      <span>Left Media</span>
+      <span className='left'>Left Media</span>
       <input
         type="range"
         min="1"
@@ -25,7 +25,7 @@ function Slider({onChange}) {
         className="slider"
         onChange={handleChange}
       />
-      <span>Right Media</span>
+      <span className='right'>Right Media</span>
     </div>
   );
 }

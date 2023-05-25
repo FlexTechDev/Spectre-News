@@ -26,13 +26,13 @@ const Bar = ({ searchQuery, onSearchQueryChange }) => {
         SpectreNews
       </div>
       <div className="navigation">
-        <a href="/" className="nav-link">Home</a>
-        <div className="dropdown">
-          <a href="/about" className="nav-link">About</a>
-          <div className="dropdown-content">
-            <p>SpectreNews is a news aggregator that filters news based on political bias using the power of OPENAI GPT-4 Technology. Use the slider to filter Right, Left, or Neutral, News media</p>
-          </div>
+      <a href="/" className="nav-link">Home</a>
+      <div className="dropdown">
+        <a href="/about" className="nav-link">About</a>
+        <div className="dropdown-content">
+          <p>SpectreNews is a news aggregator that filters news based on political bias using the power of OPENAI GPT-4 Technology. Use the slider to filter Right, Left, or Neutral, News media</p>
         </div>
+      </div>    
       </div>
       <div className="bar">
         <input
