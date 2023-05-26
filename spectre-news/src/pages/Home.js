@@ -3,7 +3,7 @@ import Bar from "../bar/Bar";
 import "./Home.css";
 import { FiArrowRightCircle } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { Particles } from "react-tsparticles";
+import { Particles  } from "react-tsparticles";
 import particlesConfig from "../effects/ParticlesConfig";
 
 function Home() {
@@ -19,7 +19,7 @@ function Home() {
           Get Started <FiArrowRightCircle className="icon" />
         </Link>
         <div className="particles-container">
-          <Particles options={particlesConfig} />
+          <Particles options={particlesConfig}/>
         </div>
       </div>
     </div>
