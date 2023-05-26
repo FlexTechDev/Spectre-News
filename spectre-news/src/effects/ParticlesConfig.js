@@ -2,7 +2,7 @@ const config = {
     "autoPlay":true,
     "background":{
        "color":{
-          "value":"#000"
+          "value":"#292b30"
        },
        "image":"",
        "position":"",
