@@ -1,7 +1,7 @@
 import "./App.css";
 import Bar from "./home/Bar";
 import Slider from "./slider/Slider";
-import NewsFeed from "./News Source/NewsFeed";
+import NewsFeed from "./sources/NewsFeed";
 import { useState } from "react";
 
 function App() {
