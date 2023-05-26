@@ -29,6 +29,14 @@ const newsSources = {
   ],
 };
 
+const apiKeys = [
+  "50059dd9147f4970b05555979c25fb94",
+  "48e819ee7bc245ffa34857e9955e0f3d",
+  "bacc3120c2a84a9c86df691fb8e7bcfc",
+  "3460767cfc654583affc5a5826b45e3d",
+  "26bc4129e12b49c49c0b0f104f8426ca",
+];
+
 const NewsFeed = ({ searchQuery, politicalView }) => {
   const [articles, setArticles] = useState([]);
 
@@ -38,18 +46,21 @@ const NewsFeed = ({ searchQuery, politicalView }) => {
 
   const fetchNews = async (query) => {
     const sources = newsSources[politicalView].join(',');
-    const apiKey = "26bc4129e12b49c49c0b0f104f8426ca";
+    const apiKey = apiKeys[Math.floor(Math.random() * apiKeys.length)];
     const url = query
       ? `https://newsapi.org/v2/everything?q=${query}&sources=${sources}&apiKey=${apiKey}`
       : `https://newsapi.org/v2/top-headlines?sources=${sources}&apiKey=${apiKey}`;
 
-    const response = await fetch(url);
-    const data = await response.json();
-    setArticles(data.articles);
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      setArticles(data.articles);
+    } catch (error) {
+      console.error("Error fetching news:", error);
+    }
   };
 
-  if(articles)
-  {
+  if (articles) {
     return (
       <div className="news-feed">
         <div className="news-feed-container">
@@ -65,6 +76,8 @@ const NewsFeed = ({ searchQuery, politicalView }) => {
         </div>
       </div>
     );
+  } else {
+    return <div>Loading...</div>;
   }
 };
 
