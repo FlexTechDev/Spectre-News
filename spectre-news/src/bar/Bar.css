@@ -3,7 +3,7 @@
   top: 0;
   height: 7vh;
   width: 100%;
-  background: #111;
+  background: rgb(22, 22, 22);
   display: flex;
   justify-content: space-between;
   align-items: center;
