@@ -6,7 +6,7 @@ function Contact()
 {
     return(
         <div className="container">
-            <Bar></Bar>
+            <Bar search={false}></Bar>
             
             <div className="panel-teschner">
                 <h2>Michael Teschner</h2>

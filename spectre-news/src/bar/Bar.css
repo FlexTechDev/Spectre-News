@@ -1,6 +1,7 @@
 .bar-container {
   position: fixed;
   top: 0;
+  height: 10vh;
   width: 100%;
   background: #111;
   display: flex;
@@ -24,7 +25,7 @@
 
 .nav-link {
   font-weight: bolder;
-  margin-right: 20px;
+  margin-right: 40px;
   margin-left: 20px;
   font-size: 16px;
   color: rgb(251, 249, 249);
@@ -37,6 +38,7 @@
 }
 
 .bar {
+  height: 3vh;
   margin: 10px;
   display: flex;
   justify-content: center;

@@ -5,7 +5,7 @@ function Home()
 {
     return(
         <div>
-            <Bar></Bar>
+            <Bar search={false}></Bar>
         </div>
     );
 }

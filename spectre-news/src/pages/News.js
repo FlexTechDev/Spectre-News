@@ -16,7 +16,7 @@ function News()
 
   return(
     <div>
-      <Bar searchQuery={searchQuery} onSearchQueryChange={setSearchQuery} />
+      <Bar search={true} searchQuery={searchQuery} onSearchQueryChange={setSearchQuery} />
       <Slider onChange={handleSliderChange} />
       <NewsFeed searchQuery={searchQuery} politicalView={politicalView} />
     </div>
