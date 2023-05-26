@@ -13,17 +13,13 @@ const Bar = ({ searchQuery, onSearchQueryChange }) => {
     }
   };
 
-  const handleLogoClick = () => {
-    window.location.reload();
-  };
-
   const performSearch = () => {
     onSearchQueryChange(searchQuery);
   };
 
   return (
     <div className="bar-container">
-      <div className="app-name" onClick={handleLogoClick}> {/* Add onClick handler here */}
+      <div className="app-name"> {/* Add onClick handler here */}
         SpectreNews <span className="beta-tag">ALPHA</span> {/* Added BETA tag here */}
       </div>
       <div className="navigation">
