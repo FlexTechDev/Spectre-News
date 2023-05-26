@@ -5,6 +5,9 @@
     padding: 20px 0;
     width: 50%;
     margin: auto;
+    background: #111;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    border-radius: 10px;
 }
 
 .slider-container span {
@@ -12,11 +15,12 @@
     width: 20%;
     text-align: center;
     font-weight: bold;
+    color: #fff;
 }
 
 .left
 {
-    color: rgb(67, 67, 255);
+    color: rgb(0, 0, 255);
 }
 
 .right
@@ -28,11 +32,12 @@
     -webkit-appearance: none;
     width: 50%;
     height: 15px;
-    background-color: #ddd;
-    background-image: linear-gradient(to right, rgb(67, 67, 255), rgb(127, 0, 127), rgb(255, 61, 61));
+    background: #111;
     outline: none;
-    -webkit-transition: 0.2s;
-    transition: opacity 0.2s;
+    transition: .2s;
+    border-radius: 15px;
+    background-image: linear-gradient(to right, rgb(0, 0, 255), rgb(67, 67, 255), rgb(255, 0, 0), rgb(255, 61, 61));
+    box-shadow: 0 0 5px rgba(255,255,255,0.1);
 }
 
 .slider::-webkit-slider-thumb {
@@ -40,39 +45,35 @@
     appearance: none;
     width: 25px;
     height: 25px;
-    background-color: #505050;
+    background: #fff;
     border-radius: 15px;
     cursor: pointer;
+    box-shadow: 0 0 5px rgba(255,255,255,0.2);
     margin-top: -5px;
 }
 
 .slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
-    background-color: #4c504d;
+    background: #fff;
     cursor:pointer;
     border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255,255,255,0.2);
     margin-top: -5px;
 }
 
 .slider::-webkit-slider-thumb:hover {
-    width: 30px;
-    height: 30px;
-    margin-top: -7.5px;
+    box-shadow: 0 0 7px rgba(255,255,255,0.2);
 }
 
 .slider::-moz-range-thumb:hover {
-    width: 30px;
-    height: 30px;
-    margin-top: -7.5px;
+    box-shadow: 0 0 7px rgba(255,255,255,0.2);
 }
 
 .slider::-webkit-slider-runnable-track {
     -webkit-appearance: none;
     width: 100%;
     height: 15px;
-    background-color: #ddd;
-    background-image: linear-gradient(to right, rgb(67, 67, 255), rgb(127, 0, 127), rgb(255, 61, 61));
     cursor: pointer;
     border-radius: 25px;
 }
@@ -80,7 +81,6 @@
 .slider::-moz-range-track {
     width: 100%;
     height: 15px;
-    background-color: #ddd;
-    background-image: linear-gradient(to right, rgb(67, 67, 255), rgb(127, 0, 127), rgb(255, 61, 61));
     cursor: pointer;
+    border-radius: 25px;
 }
