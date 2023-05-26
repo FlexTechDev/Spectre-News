@@ -6,7 +6,7 @@ import { FiArrowRightCircle } from "react-icons/fi";
 function Home() {
   return (
     <div className="home-container">
-      <Bar />
+      <Bar search={false}/>
       <div className="content">
         <h1>Welcome to SpectreNews</h1>
         <p>
