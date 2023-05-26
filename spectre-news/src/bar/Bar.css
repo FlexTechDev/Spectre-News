@@ -1,7 +1,7 @@
 .bar-container {
   position: fixed;
   top: 0;
-  height: 10vh;
+  height: 7vh;
   width: 100%;
   background: #111;
   display: flex;
