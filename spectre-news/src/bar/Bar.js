@@ -27,7 +27,7 @@ const Bar = ({ searchQuery, onSearchQueryChange }) => {
         SpectreNews <span className="beta-tag">ALPHA</span> {/* Added BETA tag here */}
       </div>
       <div className="navigation">
-      <a href="/" className="nav-link">Home</a>
+      <Link to="/" className="nav-link">Home</Link>
       <div className="dropdown">
       <a className="nav-link">About</a>
         <div className="dropdown-content">

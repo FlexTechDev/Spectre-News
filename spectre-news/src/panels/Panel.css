@@ -28,13 +28,14 @@
 }
 
 .read-more-button {
+  margin-top: 5px;
   display: inline-block;
-  background-color: #9000ff;
-  color: #fff;
+  background-image: linear-gradient(#ee50e6, #a617e4); /* yellowish color */
+  color: #000; /* black text */
   text-decoration: none;
   padding: 10px 20px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: bold;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
