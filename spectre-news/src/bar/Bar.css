@@ -82,6 +82,8 @@
   border-radius: 15px;
   background-image: linear-gradient(#ee50e6, #a617e4); /* yellowish color */
   min-width: 160px;
+  width: 300px; /* Add this line */
+  white-space: pre-wrap; /* Add this line */
   color: #000;
   font-weight: bold;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
