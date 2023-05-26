@@ -1,5 +1,5 @@
 import React from "react";
-import Bar from "../home/Bar";
+import Bar from "../bar/Bar";
 
 function Contact()
 {

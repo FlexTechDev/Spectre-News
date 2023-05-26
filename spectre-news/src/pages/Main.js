@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import Bar from "../home/Bar";
+import Bar from "../bar/Bar";
 import Slider from "../slider/Slider";
 import NewsFeed from "../sources/NewsFeed";
 

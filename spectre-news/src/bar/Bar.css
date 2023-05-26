@@ -87,7 +87,7 @@
   display: block;
 }
 .beta-tag {
-  background-color: #fff307; /* yellowish color */
+  background-image: linear-gradient(#eec450, #e4a317); /* yellowish color */
   color: #000; /* black text */
   font-weight: 700; /* bold text */
   margin-left: 10px; /* space to the left */
