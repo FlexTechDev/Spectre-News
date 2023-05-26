@@ -15,7 +15,16 @@
     font-size: 2.5rem;
   }
   
+  .icon
+  {
+    margin-left: 5px;
+    position: relative;
+    top: 2.5px
+  }
+
   p {
+    margin-left: 10vw;
+    margin-right: 10vw;
     font-size: 1.2rem;
     margin-top: 1rem;
   }
@@ -23,12 +32,18 @@
   .cta-button {
     margin-top: 1.5rem;
     font-size: 1.2rem;
-    padding: 0.8rem 2rem;
+    padding: 0.8rem 0.8rem;
     border-radius: 0.3rem;
-    background-color: #337ab7;
+    background-image: linear-gradient(#ee50e6, #a617e4); /* yellowish color */
     color: #fff;
     border: none;
     cursor: pointer;
+    transition-duration: 0.3s;
+  }
+
+  .cta-button:hover
+  {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
   }
   
   .arrow-icon {

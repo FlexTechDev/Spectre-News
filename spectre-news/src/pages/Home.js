@@ -12,11 +12,10 @@ function Home() {
         <p>
           SpectreNews is your go-to source for the latest and greatest news from around the world. Our team of dedicated developers has worked tirelessly to bring you the most important stories and insightful analysis, helping to filter the left, right, and neutral political biases for <strong>YOU</strong>.
         </p>
-        <button className="cta-button">Get Started</button>
-        <div className="arrow-icon">
-          <FiArrowRightCircle />
+        <button className="cta-button"> 
+        Get Started <FiArrowRightCircle className="icon" />
+        </button>
         </div>
-      </div>
     </div>
   );
 }
