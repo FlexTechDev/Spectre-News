@@ -1,5 +1,6 @@
 import React from "react";
 import "./Bar.css";
+import { Link } from "react-router-dom";
 
 const Bar = ({ searchQuery, onSearchQueryChange }) => {
   const handleSearchIconClick = () => {
@@ -28,11 +29,14 @@ const Bar = ({ searchQuery, onSearchQueryChange }) => {
       <div className="navigation">
       <a href="/" className="nav-link">Home</a>
       <div className="dropdown">
-        <a href="/about" className="nav-link">About</a>
+      <a className="nav-link">About</a>
         <div className="dropdown-content">
           <p>SpectreNews is a news aggregator that filters news based on political bias using the power of OPENAI GPT-4 Technology. Use the slider to filter Right, Left, or Neutral, News media</p>
         </div>
-      </div>    
+      </div>
+      <Link to="/contact" className="nav-link">
+        Contact
+      </Link>  
       </div>
       <div className="bar">
         <input

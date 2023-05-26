@@ -1,24 +1,14 @@
 import "./App.css";
-import Bar from "./home/Bar";
-import Slider from "./slider/Slider";
-import NewsFeed from "./sources/NewsFeed";
-import { useState } from "react";
+import { Route, Routes, Router} from "react-router-dom";
+import Main from "./pages/Main"
+import Contact from "./pages/Contact"
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [politicalView, setPoliticalView] = useState("center");
-
-  const handleSliderChange = (newPoliticalView) => {
-    setPoliticalView(newPoliticalView);
-    console.log("Slider value:", newPoliticalView);
-  };
-
   return (
-    <div className="App">
-      <Bar searchQuery={searchQuery} onSearchQueryChange={setSearchQuery} />
-      <Slider onChange={handleSliderChange} />
-      <NewsFeed searchQuery={searchQuery} politicalView={politicalView} />
-    </div>
+    <Routes>
+      <Route path="/" element={<Main></Main>}></Route>
+      <Route path="/contact" element={<Contact></Contact>}></Route>
+    </Routes>
   );
 }
 
