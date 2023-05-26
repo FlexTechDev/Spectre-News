@@ -3,6 +3,8 @@ import Bar from "../bar/Bar";
 import "./Home.css";
 import { FiArrowRightCircle } from "react-icons/fi";
 import {Link} from "react-router-dom";
+import Particles from "react-particles"
+import config from "../effects/ParticlesConfig"
 
 function Home() {
   return (
@@ -16,6 +18,7 @@ function Home() {
         <Link to="/news" className="cta-button"> 
         Get Started <FiArrowRightCircle className="icon" />
         </Link>
+        <Particles params={config}></Particles>
         </div>
     </div>
   );

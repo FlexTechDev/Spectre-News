@@ -8,6 +8,7 @@
 }
 
 .panel-safar {
+  text-align: center;
   border-radius: 10px;
   background-color: rgb(20, 20, 23);
   padding: 20px;
@@ -20,6 +21,7 @@
 }
 
 .panel-teschner {
+  text-align: center;
   border-radius: 10px;
   background-color: rgb(20, 20, 23);
   padding: 20px;
