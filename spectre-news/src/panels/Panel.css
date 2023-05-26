@@ -1,10 +1,11 @@
 .panel {
   border-radius: 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(20, 20, 23);
   padding: 20px;
-  max-width: 90%;
-  margin: 20px auto;
+  max-width: 30%; /* Adjusted from 90% to 30% */
+  margin: 1.5%; /* Adjusted from 20px auto to 1.5% for margins on all sides */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
 }
 
 .panel h2 {
@@ -18,6 +19,7 @@
   font-size: 1rem;
   line-height: 1.5;
 }
+
 .read-more-button {
   display: inline-block;
   background-color: #9000ff;
@@ -34,16 +36,8 @@
   background-color: #0056b3;
 }
 
-.panel {
-  width: 45%; /* Adjust the width of the panel */
-  background-color: #2b2a2a;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-}
 .panel-image {
-  max-width: 50%; /* Set a maximum width for the image, you can adjust the percentage to your preference */
+  max-width: 100%; /* Adjusted from 50% to 100% for a full-width image */
   height: auto;
   object-fit: cover;
   margin-bottom: 10px;

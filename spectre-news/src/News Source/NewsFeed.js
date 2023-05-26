@@ -38,7 +38,7 @@ const NewsFeed = ({ searchQuery, politicalView }) => {
 
   const fetchNews = async (query) => {
     const sources = newsSources[politicalView].join(',');
-    const apiKey = "3460767cfc654583affc5a5826b45e3d";
+    const apiKey = "26bc4129e12b49c49c0b0f104f8426ca";
     const url = query
       ? `https://newsapi.org/v2/everything?q=${query}&sources=${sources}&apiKey=${apiKey}`
       : `https://newsapi.org/v2/top-headlines?sources=${sources}&apiKey=${apiKey}`;
