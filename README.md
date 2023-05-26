@@ -5,11 +5,11 @@
 
 **Features:**
 
-1. **Bias Slider:** The main feature would be the ability to adjust the political bias of the news feed by moving a slider along a spectrum. 
+1. **Bias Slider:** The main feature is the ability to adjust the political bias of the news feed by moving a slider along a spectrum. 
 
-2. **Multiple Perspectives:** For major stories, the platform could present articles from multiple sources across the political spectrum to showcase diverse viewpoints.
+2. **Multiple Perspectives:** For major stories, the platform presents articles from multiple sources across the political spectrum to showcase diverse viewpoints.
 
-3. **Transparency Information:** Each article could include information about the original source and its known biases, allowing users to be more informed about where their news is coming from.
+3. **Transparency Information:** Each article includes information about the original source and its known biases, allowing users to be more informed about where their news is coming from.
 
 4. **Personalized News Feed:** Users can choose to follow specific topics, regions, or types of news, and the platform will curate a personalized news feed based on these preferences.
 
