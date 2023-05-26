@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    margin-top: 10%;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Aligns items from the start */
+    align-items: stretch; /* Makes items fill the vertical space */
+}
+
+.panel-safar {
+    border-radius: 10px;
+    background-color: rgb(20, 20, 23);
+    padding: 20px;
+    right: 15vw;
+    position: absolute;
+    max-width: 30%; /* Adjusted from 90% to 30% */
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+    transition: transform 0.3s ease; /* Added this line for the hover effect */
+}
+
+.panel-teschner {
+    border-radius: 10px;
+    background-color: rgb(20, 20, 23);
+    padding: 20px;
+    left: 15vw;
+    max-width: 30%; /* Adjusted from 90% to 30% */
+    position: absolute;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+    transition: transform 0.3s ease; /* Added this line for the hover effect */
+}
+
+.panel:hover {
+    transform: scale(1.05); /* Added this block for the hover effect */
+}
+
+.panel h2 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    color: #FFFFFF; /* Added this line to change the headline color to white */
+}
+
+.panel p {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #FFFFFF; /* Added this line to change the text color to white */
+}
+
+
+.read-more-button:hover {
+    background-color: #0056b3;
+}

@@ -4,7 +4,7 @@ import Bar from "../bar/Bar";
 import Slider from "../slider/Slider";
 import NewsFeed from "../sources/NewsFeed";
 
-function Main()
+function News()
 {
   const [searchQuery, setSearchQuery] = useState("");
   const [politicalView, setPoliticalView] = useState("center");
@@ -23,4 +23,4 @@ function Main()
   );
 }
 
-export default Main;
+export default News;
