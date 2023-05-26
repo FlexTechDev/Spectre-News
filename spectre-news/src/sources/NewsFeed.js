@@ -38,6 +38,12 @@ const apiKeys = [
   "82b3b35c6bf447b49d0b6e70b6f787ac",
   "da4ecc70d757442fac671381686b3141",
   "46d5414eb3954c19bedc74b2200e605f",
+  "5bd9b8b6e4c24f409c6cb40c7cfe8622",
+  "d486534097014eacb05616d9d55897bb",
+  "415a393ec5cb4649a2187feb3bdea4b5",
+  "8331f82f684d4140aaa1eb65fbbfc162",
+
+
 ];
 
 const NewsFeed = ({ searchQuery, politicalView }) => {
