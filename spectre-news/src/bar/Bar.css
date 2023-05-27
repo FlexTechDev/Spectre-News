@@ -81,15 +81,17 @@
   border-radius: 15px;
   background-image: linear-gradient(#ee50e6, #a617e4); /* yellowish color */
   min-width: 160px;
-  width: 75px; /* Add this line */
+  width: 75px; /* Consider increasing this value */
   height: 125px;
-  color: #000;
+  color: rgb(243, 238, 238);
   font-weight: bold;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px;
+  padding: 100px;
   z-index: 1;
   font-size: 13px;
+  overflow: auto; /* Add this line */
 }
+
 
 .dropdown:hover .dropdown-content {
   display: block;
