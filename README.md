@@ -1,5 +1,5 @@
 # Spectre-News
-**Name: NewsSpectrum**
+**Name: SpectreNews**
 
 **Concept:** A news platform that allows users to adjust the political bias of the content they see with a slider, moving from left to right or settling in the middle for a more neutral viewpoint.
 
