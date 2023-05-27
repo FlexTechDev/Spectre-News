@@ -76,12 +76,13 @@
 }
 
 .dropdown-content {
+  display: none;
   position: absolute;
   border-radius: 15px;
   background-image: linear-gradient(#ee50e6, #a617e4); /* yellowish color */
   min-width: 160px;
   width: 75px; /* Add this line */
-  height: 150px;
+  height: 125px;
   color: #000;
   font-weight: bold;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);

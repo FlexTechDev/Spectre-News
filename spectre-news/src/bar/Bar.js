@@ -62,7 +62,7 @@ const Bar = ({search, searchQuery, onSearchQueryChange }) => {
         <div className="dropdown">
         <a className="nav-link">About</a>
           <div className="dropdown-content">
-            SpectreNews is a news aggregator that filters news based on political bias using the power of OPENAI GPT-4 Technology. Use the slider to filter Right, Left, or Neutral, News media
+            SpectreNews is a news aggregator that filters news based on political bias using a custom made neural network. Use the slider to filter Right, Left, or Neutral, News media
           </div>
         </div>
         <Link to="/news" className="nav-link">
