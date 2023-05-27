@@ -10,7 +10,7 @@ function Contact()
             
             <div className="panel-teschner">
                 <h2>Michael Teschner</h2>
-                <p>A developer of German origin. One of the Co-founders of SpectreNews.</p>
+                <p>A developer based out of St. Louis, MO. One of the Co-founders of SpectreNews.</p>
                 <p>reach me at: mteschner@spectrenews.com</p>
             </div>
 

@@ -4,7 +4,7 @@
   padding: 20px;
   max-width: 30%; /* Adjusted from 90% to 30% */
   margin: 1.5%; /* Adjusted from 20px auto to 1.5% for margins on all sides */
-  box-shadow: 0 0 10px #e9e5eb;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
   box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
   transition: transform 0.3s ease; /* Added this line for the hover effect */
 }
