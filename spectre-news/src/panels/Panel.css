@@ -12,19 +12,21 @@
 }
 
 .container {
+  position: relative;
   text-align: center;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .read-more-button {
   margin-top: 5px;
   display: inline-block;
-  border: 2px solid #ee50e6;
+  background-color: rgb(22, 22, 22);
   color: #ee50e6; /* black text */
   text-decoration: none;
   padding: 5px 10px;
   font-size: 10px;
-  font-weight: bold;
+  font-weight: 500;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
