@@ -3,10 +3,6 @@ import "./Bar.css";
 import { Link } from "react-router-dom";
 
 const Bar = ({search, searchQuery, onSearchQueryChange }) => {
-  const handleSearchIconClick = () => {
-    performSearch();
-  };
-
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       performSearch();
@@ -62,7 +58,9 @@ const Bar = ({search, searchQuery, onSearchQueryChange }) => {
         <div className="dropdown">
         <a className="nav-link">About</a>
           <div className="dropdown-content">
-            SpectreNews is a news aggregator that filters news based on political bias using a custom made neural network. Use the slider to filter Right, Left, or Neutral, News media
+            <p>
+              SpectreNews is a news aggregator that filters news based on political bias using a custom made neural network. Use the slider to filter Right, Left, or Neutral, News media
+            </p>
           </div>
         </div>
         <Link to="/news" className="nav-link">
