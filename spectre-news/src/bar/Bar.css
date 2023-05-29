@@ -79,8 +79,9 @@
   display: none;
   position: absolute;
   border-radius: 15px;
-  background-image: linear-gradient(#ee50e6, #a617e4); /* yellowish color */
-  color: rgb(243, 238, 238);
+  border: 2px solid #ee50e6;
+  background-color: rgb(22, 22, 22);
+  color: #ee50e6;
   font-weight: bold;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -96,8 +97,8 @@
 }
 
 .beta-tag {
-  background-image: linear-gradient(#ee50e6, #a617e4); /* yellowish color */
-  color: #000; /* black text */
+  border: 2px solid #ee50e6;
+  color: #ee50e6; /* black text */
   font-weight: 700; /* bold text */
   margin-left: 10px; /* space to the left */
   padding: 2px 10px; /* padding inside the tag */

@@ -1,54 +1,42 @@
 .panel {
   border-radius: 10px;
-  background-color: rgb(20, 20, 23);
-  padding: 20px;
+  background-color: rgb(49, 49, 49);
   max-width: 30%;
   margin: 1.5%;
-  box-shadow: 0 0 10px rgba(241, 240, 240, 0.3); /* Made box shadow greater */
   box-sizing: border-box;
   transition: transform 0.3s ease;
 }
-
 
 .panel:hover {
   transform: scale(1.05); /* Added this block for the hover effect */
 }
 
-.panel h2 {
-  margin: 0;
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-  color: #FFFFFF; /* Added this line to change the headline color to white */
-}
-
-.panel p {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #FFFFFF; /* Added this line to change the text color to white */
+.container {
+  text-align: center;
+  padding: 20px;
 }
 
 .read-more-button {
   margin-top: 5px;
   display: inline-block;
-  background-image: linear-gradient(#ee50e6, #a617e4); /* yellowish color */
-  color: #000; /* black text */
+  border: 2px solid #ee50e6;
+  color: #ee50e6; /* black text */
   text-decoration: none;
-  padding: 10px 20px;
-  font-size: 14px;
+  padding: 5px 10px;
+  font-size: 10px;
   font-weight: bold;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 .read-more-button:hover {
-  background-color: #0056b3;
+  box-shadow: 0 0 10px #a617e4;
 }
 
 .panel-image {
   max-width: 100%; /* Adjusted from 50% to 100% for a full-width image */
   height: auto;
   object-fit: cover;
-  margin-bottom: 10px;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }

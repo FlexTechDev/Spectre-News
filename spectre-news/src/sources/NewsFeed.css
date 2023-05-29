@@ -1,6 +1,6 @@
 .news-feed-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start; /* Aligns items from the start */
+  justify-content: center; /* Aligns items from the start */
   align-items: stretch; /* Makes items fill the vertical space */
 }

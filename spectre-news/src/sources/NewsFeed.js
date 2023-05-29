@@ -30,20 +30,7 @@ const newsSources = {
 };
 
 const apiKeys = [
-  "50059dd9147f4970b05555979c25fb94",
-  "48e819ee7bc245ffa34857e9955e0f3d",
-  "bacc3120c2a84a9c86df691fb8e7bcfc",
-  "3460767cfc654583affc5a5826b45e3d",
-  "26bc4129e12b49c49c0b0f104f8426ca",
-  "82b3b35c6bf447b49d0b6e70b6f787ac",
-  "da4ecc70d757442fac671381686b3141",
-  "46d5414eb3954c19bedc74b2200e605f",
-  "5bd9b8b6e4c24f409c6cb40c7cfe8622",
-  "d486534097014eacb05616d9d55897bb",
-  "415a393ec5cb4649a2187feb3bdea4b5",
-  "8331f82f684d4140aaa1eb65fbbfc162",
-
-
+  "50059dd9147f4970b05555979c25fb94"
 ];
 
 const NewsFeed = ({ searchQuery, politicalView }) => {
