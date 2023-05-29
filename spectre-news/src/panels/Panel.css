@@ -2,9 +2,10 @@
   border-radius: 10px;
   background-color: rgb(49, 49, 49);
   max-width: 30%;
-  margin: 1.5%;
+  margin: 1.2%;
   box-sizing: border-box;
   transition: transform 0.3s ease;
+  overflow: auto; /* New line added to handle overflow */
 }
 
 .panel:hover {
