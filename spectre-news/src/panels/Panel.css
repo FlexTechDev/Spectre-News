@@ -9,6 +9,17 @@
   overflow: auto; /* New line added to handle overflow */
 }
 
+::-webkit-scrollbar
+{
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #232323;
+  border-radius: 5px;
+}
+
+
 .panel:hover {
   transform: scale(1.05); /* Added this block for the hover effect */
 }
