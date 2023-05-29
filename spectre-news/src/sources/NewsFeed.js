@@ -23,6 +23,8 @@ const NewsFeed = ({ searchQuery }) => {
     "https://rss.app/feeds/77SpeVCFWfQfnRiu.xml",
     "https://rss.app/feeds/KliQyySDpT5GRmRA.xml",
     "https://rss.app/feeds/JxBNaoZVo5ZBJR8D.xml",
+    "https://rss.app/feeds/8k6sZXE78JVfs0jj.xml",
+    "https://rss.app/feeds/8nk7GQ6xg6Fz7D96.xml",
   ];
 
   useEffect(() => {
