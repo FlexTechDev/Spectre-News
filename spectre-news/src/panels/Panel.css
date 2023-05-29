@@ -2,6 +2,7 @@
   border-radius: 10px;
   background-color: rgb(49, 49, 49);
   max-width: 30%;
+  padding: 20px;
   margin: 1.2%;
   box-sizing: border-box;
   transition: transform 0.3s ease;
@@ -20,12 +21,12 @@
 .read-more-button {
   display: block; /* Changed from inline-block to block */
   margin: 5px auto; /* Adjusted to auto for left and right margins */
-  border: 2px solid #ee50e6;
+  border: 1px solid #ee50e6;
   color: #ee50e6;
   text-decoration: none;
   padding: 5px 10px;
   font-size: 10px;
-  font-weight: bold;
+  font-weight: 500;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
