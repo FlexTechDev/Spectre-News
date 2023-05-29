@@ -13,21 +13,19 @@
 }
 
 .container {
-  position: relative;
   text-align: center;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 0px;
 }
 
 .read-more-button {
-  margin-top: 5px;
-  display: inline-block;
-  background-color: rgb(22, 22, 22);
-  color: #ee50e6; /* black text */
+  display: block; /* Changed from inline-block to block */
+  margin: 5px auto; /* Adjusted to auto for left and right margins */
+  border: 2px solid #ee50e6;
+  color: #ee50e6;
   text-decoration: none;
   padding: 5px 10px;
   font-size: 10px;
-  font-weight: 500;
+  font-weight: bold;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
