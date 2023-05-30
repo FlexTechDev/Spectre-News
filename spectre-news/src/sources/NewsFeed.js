@@ -62,11 +62,16 @@ const NewsFeed = ({ searchQuery }) => {
 
       for (let j = 0; j < items.length; j++) {
         const item = items[j];
-        const title = item.getElementsByTagName("title")[0].textContent;
-        const description = item.getElementsByTagName("description")[0].textContent;
-        const link = item.getElementsByTagName("link")[0].textContent;
-        const thumbnail =
-          item.getElementsByTagName("thumbnail")[0]?.getAttribute("url") || null;
+        
+        const titleElement = item.getElementsByTagName("title")[0];
+        const descriptionElement = item.getElementsByTagName("description")[0];
+        const linkElement = item.getElementsByTagName("link")[0];
+        const thumbnailElement = item.getElementsByTagName("thumbnail")[0];
+        
+        const title = titleElement ? titleElement.textContent : "";
+        const description = descriptionElement ? descriptionElement.textContent : "";
+        const link = linkElement ? linkElement.textContent : "";
+        const thumbnail = thumbnailElement ? thumbnailElement.getAttribute("url") : null;
 
         articles.push({ title, description, link, thumbnail });
       }
@@ -102,7 +107,7 @@ const NewsFeed = ({ searchQuery }) => {
       </div>
     );
   } else {
-    return <div>No articles found.</div>;
+    return <div>Generating Articles...</div>;
   }
 };
 
