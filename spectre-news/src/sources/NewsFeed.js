@@ -6,6 +6,7 @@ const NewsFeed = ({ searchQuery }) => {
   const [articles, setArticles] = useState([]);
   const [filteredArticles, setFilteredArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isAdblockerActive, setIsAdblockerActive] = useState(false);
 
   const rssFeedUrls = [
     "https://rss.app/feeds/YFUKDMqqEL9IsSdx.xml",
@@ -29,11 +30,25 @@ const NewsFeed = ({ searchQuery }) => {
 
   useEffect(() => {
     fetchAllNews();
+    checkForAdblocker();
   }, []);
 
   useEffect(() => {
     filterArticles();
   }, [searchQuery]);
+
+  const checkForAdblocker = () => {
+    const test = document.createElement('div');
+    test.innerHTML = '&nbsp;';
+    test.className = 'adsbox';
+    document.body.appendChild(test);
+    window.setTimeout(() => {
+      if (test.offsetHeight === 0) {
+        setIsAdblockerActive(true);
+      }
+      test.remove();
+    }, 100);
+  };
 
   const fetchAllNews = async () => {
     setIsLoading(true);
@@ -88,7 +103,14 @@ const NewsFeed = ({ searchQuery }) => {
     setFilteredArticles(filtered);
   };
 
-  if (isLoading) {
+  if (isAdblockerActive) {
+    return (
+      <div className="adblocker-modal">
+        <h1>Please disable your adblocker to access this site</h1>
+        <p>We rely on ad revenue to keep our site running. Please support us by disabling your adblocker.</p>
+      </div>
+    );
+  } else if (isLoading) {
     return <div className="loading-bar" />;
   } else if (filteredArticles.length > 0) {
     return (
