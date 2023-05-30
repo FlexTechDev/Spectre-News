@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-image: linear-gradient(rgb(33, 33, 33), rgb(22, 22, 22));
+  background-color: rgb(33, 33, 33);
   font-family: 'Segoe UI', 'Roboto', 'Oxygen','Ubunt';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
