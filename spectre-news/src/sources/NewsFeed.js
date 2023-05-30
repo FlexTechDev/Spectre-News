@@ -11,7 +11,6 @@ const NewsFeed = ({ searchQuery }) => {
     "https://rss.app/feeds/g5D1Jukuh6x0HY09.xml",
     "https://rss.app/feeds/AAOrQcja3YPWEOL3.xml",
     "https://rss.app/feeds/2LUbXnzXwEQDeXTM.xml",
-    "https://rss.app/feeds/xw69IzWVci1myNLz.xml",
     "https://rss.app/feeds/odQcynLfNwjWo6d9.xml",
     "https://rss.app/feeds/zrisE6uWsHq5Ttfj.xml",
     "https://rss.app/feeds/tSyutGeASpJNXO83.xml",
