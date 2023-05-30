@@ -72,3 +72,12 @@ p {
   background-size: 200% 200%;
   animation: gradient 5s ease infinite;
 }
+.background-video {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
