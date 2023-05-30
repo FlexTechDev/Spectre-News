@@ -5,6 +5,7 @@ import "./NewsFeed.css";
 const NewsFeed = ({ searchQuery }) => {
   const [articles, setArticles] = useState([]);
   const [filteredArticles, setFilteredArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const rssFeedUrls = [
     "https://rss.app/feeds/YFUKDMqqEL9IsSdx.xml",
@@ -35,9 +36,17 @@ const NewsFeed = ({ searchQuery }) => {
   }, [searchQuery]);
 
   const fetchAllNews = async () => {
-    const newArticles = await fetchArticlesFromUrls(rssFeedUrls);
-    setArticles(newArticles);
-    setFilteredArticles(newArticles);
+    setIsLoading(true);
+
+    try {
+      const newArticles = await fetchArticlesFromUrls(rssFeedUrls);
+      setArticles(newArticles);
+      setFilteredArticles(newArticles);
+    } catch (error) {
+      console.error("Failed to fetch news:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const fetchArticlesFromUrls = async (urls) => {
@@ -74,7 +83,9 @@ const NewsFeed = ({ searchQuery }) => {
     setFilteredArticles(filtered);
   };
 
-  if (filteredArticles.length > 0) {
+  if (isLoading) {
+    return <div className="loading-bar" />;
+  } else if (filteredArticles.length > 0) {
     return (
       <div className="news-feed">
         <div className="news-feed-container">
