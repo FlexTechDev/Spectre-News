@@ -69,7 +69,6 @@ p {
   justify-content: center;
   height: 100vh;
   text-align: center;
-  background: #2c2c2c;
   background-size: 200% 200%;
   animation: gradient 5s ease infinite;
 }
