@@ -5,14 +5,14 @@
   padding: 20px;
   margin: 1.2%;
   box-sizing: border-box;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Include box-shadow transition */
   overflow: hidden; /* Prevent scrolling */
-  box-shadow: 0px 0px 10px rgb(11,11,11);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* White box shadow */
 }
 
 .panel:hover {
   transform: scale(1.05);
-  box-shadow: 0px 0px 10px rgb(11,11,11);
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3); /* Greater white box shadow on hover */
 }
 
 .container {
