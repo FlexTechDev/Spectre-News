@@ -41,7 +41,7 @@
 
 
 .read-more-button:hover {
-  background-color: #a617e4;
+  background-color: purple !important;
 }
 
 .panel-image {
