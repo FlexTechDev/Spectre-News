@@ -1,7 +1,7 @@
 import React from 'react';
 import './Slider.css';
 
-function Slider({onChange}) {
+function Slider({onChange, value}) {
   const handleChange = (event) => {
     let value = parseInt(event.target.value, 10);
     let politicalView;
@@ -22,6 +22,7 @@ function Slider({onChange}) {
         type="range"
         min="1"
         max="100"
+        value={value}
         className="slider"
         onChange={handleChange}
       />

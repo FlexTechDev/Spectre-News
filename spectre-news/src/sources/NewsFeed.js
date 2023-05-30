@@ -2,31 +2,58 @@ import React, { useState, useEffect } from "react";
 import Panel from "../panels/Panel";
 import "./NewsFeed.css";
 
-const NewsFeed = ({ searchQuery }) => {
-  const [articles, setArticles] = useState([]);
+const NewsFeed = ({ searchQuery, politicalView }) => {
+  const [leftArticles, setLeftArticles] = useState([]);
+  const [centerArticles, setCenterArticles] = useState([]);
+  const [rightArticles, setRightArticles] = useState([]);
   const [filteredArticles, setFilteredArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isAdblockerActive, setIsAdblockerActive] = useState(false);
 
-  const rssFeedUrls = [
-    "https://rss.app/feeds/YFUKDMqqEL9IsSdx.xml",
-    "https://rss.app/feeds/g5D1Jukuh6x0HY09.xml",
-    "https://rss.app/feeds/AAOrQcja3YPWEOL3.xml",
-    "https://rss.app/feeds/2LUbXnzXwEQDeXTM.xml",
-    "https://rss.app/feeds/odQcynLfNwjWo6d9.xml",
-    "https://rss.app/feeds/zrisE6uWsHq5Ttfj.xml",
-    "https://rss.app/feeds/tSyutGeASpJNXO83.xml",
-    "https://rss.app/feeds/6HiiYwL7kNP6g9z8.xml",
-    "https://rss.app/feeds/VS29fiEndn5PE5pT.xml",
-    "https://rss.app/feeds/gKQF4Nlvvos2dNUR.xml",
-    "https://rss.app/feeds/7rqz3OmdrpVeYzwp.xml",
-    "https://rss.app/feeds/1fR4LiVDtsBImveZ.xml",
-    "https://rss.app/feeds/77SpeVCFWfQfnRiu.xml",
-    "https://rss.app/feeds/KliQyySDpT5GRmRA.xml",
-    "https://rss.app/feeds/JxBNaoZVo5ZBJR8D.xml",
-    "https://rss.app/feeds/8k6sZXE78JVfs0jj.xml",
-    "https://rss.app/feeds/8nk7GQ6xg6Fz7D96.xml",
-  ];
+  const rssFeedUrls = {
+    'left': [
+      "https://rss.app/feeds/7nMOcp5pjC3Hcjxa.xml",
+      "https://rss.app/feeds/bDganfp2JvZdxZO7.xml",
+      "https://rss.app/feeds/0tobFXrLav0eRe3Q.xml",
+      "https://rss.app/feeds/Nw8urOYGdwfJ08TR.xml",
+      "https://rss.app/feeds/3o357lO46urmdn8R.xml",
+      "https://rss.app/feeds/n5LEOUqjuCZhyNKk.xml",
+      "https://rss.app/feeds/Ia5OUXfGKQ7S53KA.xml",
+      "https://rss.app/feeds/qtStwv6K6IkI3f00.xml",
+      "https://rss.app/feeds/ANDz5X02cHKoyAQz.xml",
+      "https://rss.app/feeds/93qspuoTABpTUjH0.xml",
+      "https://rss.app/feeds/JdQhfe49DiMsPLG4.xml",
+      "https://rss.app/feeds/PKmdh6DhIf0qdJxN.xml",
+      "https://rss.app/feeds/oWmPdtBT9QXNcoLj.xml",
+    ],
+    'center': [
+      "https://rss.app/feeds/z24zH70dRrax0Ayf.xml",
+      "https://rss.app/feeds/1NeX7ZdBPXUE7zCS.xml",
+      "https://rss.app/feeds/2cueGeZ541h4Sc8D.xml",
+      "https://rss.app/feeds/SOv9CIiIsz4p0EzG.xml",
+      "https://rss.app/feeds/lDeUdkRSieFtP6YH.xml",
+      "https://rss.app/feeds/1MVo61L2KS78bFlL.xml",
+      "https://rss.app/feeds/Qrt44dAjrpTALzMz.xml",
+      "https://rss.app/feeds/UrEbYZvn37oClPMu.xml",
+      "https://rss.app/feeds/Hyxr9JyGKvUMELS8.xml",
+      "https://rss.app/feeds/wEN7DYBjUCvYDPrc.xml",
+    ],
+    'right': [
+      "https://rss.app/feeds/UnnGaO909qsaLTA6.xml",
+      "https://rss.app/feeds/W6f1XoTvAmQikXI2.xml",
+      "https://rss.app/feeds/VZ63v04dcLLlDRp1.xml",
+      "https://rss.app/feeds/YU9BQjdwmiaCvppU.xml",
+      "https://rss.app/feeds/u5ehaUBD9OH9r05t.xml",
+      "https://rss.app/feeds/YRwxpATv6aQgSxOI.xml",
+      "https://rss.app/feeds/Urx9FHFBsa9ggpCd.xml",
+      "https://rss.app/feeds/4QeJZenYqueRNSft.xml",
+      "https://rss.app/feeds/4FTw0jY3aQpDhThY.xml",
+      "https://rss.app/feeds/fYMZ4wDAkQheoQVt.xml",
+      "https://rss.app/feeds/KKq2cccXzGoBNliv.xml",
+      "https://rss.app/feeds/Qay8k9gPLgR0xRBU.xml",
+      "https://rss.app/feeds/QYsSPqWFzoEU9PYn.xml",
+    ]
+  };
 
   useEffect(() => {
     fetchAllNews();
@@ -34,8 +61,21 @@ const NewsFeed = ({ searchQuery }) => {
   }, []);
 
   useEffect(() => {
-    filterArticles();
-  }, [searchQuery]);
+    let articles = [];
+    if (politicalView === "left") {
+      articles = leftArticles;
+    } else if (politicalView === "center") {
+      articles = centerArticles;
+    } else if (politicalView === "right") {
+      articles = rightArticles;
+    }
+
+    const filtered = articles.filter((article) => {
+      const regex = new RegExp(searchQuery, "i");
+      return regex.test(article.title) || regex.test(article.description);
+    });
+    setFilteredArticles(filtered);
+  }, [searchQuery, politicalView, leftArticles, centerArticles, rightArticles]);
 
   const checkForAdblocker = () => {
     const test = document.createElement('div');
@@ -54,9 +94,21 @@ const NewsFeed = ({ searchQuery }) => {
     setIsLoading(true);
 
     try {
-      const newArticles = await fetchArticlesFromUrls(rssFeedUrls);
-      setArticles(newArticles);
-      setFilteredArticles(newArticles);
+      const newLeftArticles = shuffleArray(await fetchArticlesFromUrls(rssFeedUrls["left"]));
+      const newCenterArticles = shuffleArray(await fetchArticlesFromUrls(rssFeedUrls["center"]));
+      const newRightArticles = shuffleArray(await fetchArticlesFromUrls(rssFeedUrls["right"]));
+
+      setLeftArticles(newLeftArticles);
+      setCenterArticles(newCenterArticles);
+      setRightArticles(newRightArticles);
+
+      if (politicalView === "left") {
+        setFilteredArticles(newLeftArticles);
+      } else if (politicalView === "center") {
+        setFilteredArticles(newCenterArticles);
+      } else if (politicalView === "right") {
+        setFilteredArticles(newRightArticles);
+      }
     } catch (error) {
       console.error("Failed to fetch news:", error);
     } finally {
@@ -95,12 +147,12 @@ const NewsFeed = ({ searchQuery }) => {
     return articles;
   };
 
-  const filterArticles = () => {
-    const filtered = articles.filter((article) => {
-      const regex = new RegExp(searchQuery, "i");
-      return regex.test(article.title) || regex.test(article.description);
-    });
-    setFilteredArticles(filtered);
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
   };
 
   if (isAdblockerActive) {
@@ -129,7 +181,7 @@ const NewsFeed = ({ searchQuery }) => {
       </div>
     );
   } else {
-    return <div>Generating Articles...</div>;
+    return <div>No Articles Found...</div>;
   }
 };
 
