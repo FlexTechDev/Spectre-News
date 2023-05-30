@@ -23,7 +23,8 @@
   display: block;
   margin: 5px auto;
   border: none;
-  background-color: #ee50e6;
+  background-color: rgb(49, 49, 49);
+  border: 1px solid #ee50e6;
   color: white;
   text-decoration: none;
   padding: 5px 10px;
