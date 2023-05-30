@@ -4,7 +4,7 @@ import "./NewsFeed.css";
 
 const NewsFeed = ({ searchQuery }) => {
   const [articles, setArticles] = useState([]);
-  const [page, setPage] = useState(0);
+  const [filteredArticles, setFilteredArticles] = useState([]);
 
   const rssFeedUrls = [
     "https://rss.app/feeds/YFUKDMqqEL9IsSdx.xml",
@@ -27,20 +27,20 @@ const NewsFeed = ({ searchQuery }) => {
   ];
 
   useEffect(() => {
-    fetchAllNews(searchQuery);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    fetchAllNews();
+  }, []);
+
+  useEffect(() => {
+    filterArticles();
   }, [searchQuery]);
 
-  const fetchAllNews = async (query) => {
-    const startIndex = page * rssFeedUrls.length;
-
-    const newArticles = await fetchArticlesFromUrls(rssFeedUrls, startIndex);
-    setArticles([...articles, ...newArticles]);
-    setPage(page + 1);
+  const fetchAllNews = async () => {
+    const newArticles = await fetchArticlesFromUrls(rssFeedUrls);
+    setArticles(newArticles);
+    setFilteredArticles(newArticles);
   };
 
-  const fetchArticlesFromUrls = async (urls, startIndex) => {
+  const fetchArticlesFromUrls = async (urls) => {
     const articles = [];
 
     for (let i = 0; i < urls.length; i++) {
@@ -51,12 +51,13 @@ const NewsFeed = ({ searchQuery }) => {
       const xmlDoc = parser.parseFromString(xmlText, "text/xml");
       const items = xmlDoc.getElementsByTagName("item");
 
-      for (let j = startIndex; j < items.length; j++) {
+      for (let j = 0; j < items.length; j++) {
         const item = items[j];
         const title = item.getElementsByTagName("title")[0].textContent;
         const description = item.getElementsByTagName("description")[0].textContent;
         const link = item.getElementsByTagName("link")[0].textContent;
-        const thumbnail = item.getElementsByTagName("thumbnail")[0]?.getAttribute("url") || null;
+        const thumbnail =
+          item.getElementsByTagName("thumbnail")[0]?.getAttribute("url") || null;
 
         articles.push({ title, description, link, thumbnail });
       }
@@ -65,21 +66,19 @@ const NewsFeed = ({ searchQuery }) => {
     return articles;
   };
 
-  const handleScroll = () => {
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop + windowHeight >= documentHeight) {
-      fetchAllNews(searchQuery);
-    }
+  const filterArticles = () => {
+    const filtered = articles.filter((article) => {
+      const regex = new RegExp(searchQuery, "i");
+      return regex.test(article.title) || regex.test(article.description);
+    });
+    setFilteredArticles(filtered);
   };
 
-  if (articles.length > 0) {
+  if (filteredArticles.length > 0) {
     return (
       <div className="news-feed">
         <div className="news-feed-container">
-          {articles.map((article, index) => (
+          {filteredArticles.map((article, index) => (
             <Panel
               key={index}
               title={article.title}
@@ -92,7 +91,7 @@ const NewsFeed = ({ searchQuery }) => {
       </div>
     );
   } else {
-    return <div>Loading...</div>;
+    return <div>No articles found.</div>;
   }
 };
 
