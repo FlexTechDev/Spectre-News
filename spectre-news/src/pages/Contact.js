@@ -11,13 +11,13 @@ function Contact()
             <div className="panel-teschner">
                 <h2>Michael Teschner</h2>
                 <p>A developer based out of St. Louis, MO. One of the Co-founders of SpectreNews.</p>
-                <p>reach me at: mteschner@spectrenews.com</p>
+                <p>reach me at: msafmtesch@gmail.com</p>
             </div>
 
             <div className="panel-safar">
                 <h2>Michael Safar</h2>
                 <p>A developer based out of St. Louis, MO. One of the Co-founders of SpectreNews. </p>
-                <p>reach me at: michaelsafar@spectrenews.com</p>       
+                <p>reach me at: msafmtesch@gmail.com</p>       
             </div>
             
         </div>

@@ -41,7 +41,7 @@ const Bar = ({ search, searchQuery, onSearchQueryChange }) => {
     return (
       <div className="bar-container">
         <div className="app-name">
-          SpectreNews <span className="beta-tag">ALPHA</span>
+          SpectreNews <span className="beta-tag">BETA</span>
         </div>
         <div className="navigation">
           <Link to="/" className="nav-link">
@@ -80,7 +80,7 @@ const Bar = ({ search, searchQuery, onSearchQueryChange }) => {
     return (
       <div className="bar-container">
         <div className="app-name">
-          SpectreNews <span className="beta-tag">ALPHA</span>
+          SpectreNews <span className="beta-tag">BETA</span>
         </div>
         <div className="navigation">
           <Link to="/" className="nav-link">

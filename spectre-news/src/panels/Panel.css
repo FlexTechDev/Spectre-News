@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .panel {
   border-radius: 10px;
   background-color: #181a1d;
@@ -8,6 +15,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Include box-shadow transition */
   overflow: hidden; /* Prevent scrolling */
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* White box shadow */
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .panel:hover {
@@ -18,6 +26,7 @@
 .container {
   text-align: center;
   padding: 0px;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .read-more-button {
@@ -37,6 +46,7 @@
   bottom: 10px;
   right: 10px;
   cursor: pointer;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 
@@ -50,4 +60,5 @@
   object-fit: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  font-family: 'Poppins', sans-serif !important;
 }

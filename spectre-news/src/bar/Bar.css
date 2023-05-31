@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .bar-container {
   position: fixed;
   top: 0;
@@ -10,6 +17,7 @@
   padding: 0 20px;
   box-shadow: 0 0 10px #a617e4;
   z-index: 3;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .app-name {
@@ -18,6 +26,7 @@
   font-weight: bold;
   color: rgb(254, 252, 252);
   text-align: left;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .alpha-logo {
@@ -29,6 +38,7 @@
   display: flex;
   position: relative;
   align-items: center;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .nav-link {
@@ -39,6 +49,7 @@
   color: rgb(251, 249, 249);
   text-decoration: none;
   transition-duration: 0.2s;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .nav-link:hover {
@@ -68,6 +79,7 @@
   border: none;
   outline: none;
   padding-right: 40px;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .search-icon {
@@ -80,6 +92,7 @@
 
 .dropdown {
   display: inline-block;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .dropdown-content {
@@ -92,10 +105,12 @@
   font-weight: bold;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .dropdown-content p {
   font-size: 15px;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .dropdown:hover .dropdown-content {
@@ -112,6 +127,7 @@
   border-radius: 10px;
   margin-left: 3px; /* Adjust the margin as needed */
   top: -2px; /* Adjust the value to move it up or down */
+  font-family: 'Poppins', sans-serif !important;
 }
 
 @keyframes beta-breath {
@@ -131,6 +147,7 @@
   color: rgb(217, 214, 214);
   margin-left: 70px;
   margin-right: 20px;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .time {
@@ -138,4 +155,5 @@
   color: rgb(199, 194, 194);
   margin-left: 30px;
   margin-right: 20px;
+  font-family: 'Poppins', sans-serif !important;
 }

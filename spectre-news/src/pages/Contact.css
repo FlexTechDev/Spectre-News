@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .container {
   display: flex;
   margin-top: 10%;
@@ -5,6 +12,7 @@
   flex-wrap: wrap;
   justify-content: flex-start; /* Aligns items from the start */
   align-items: stretch; /* Makes items fill the vertical space */
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .panel-safar {
@@ -19,6 +27,7 @@
   box-shadow: 0 0 5px #a617e4;
   box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
   transition: transform 0.3s ease; /* Added this line for the hover effect */
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .panel-teschner {
@@ -33,6 +42,7 @@
   box-shadow: 0 0 5px #a617e4;
   box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
   transition: transform 0.3s ease; /* Added this line for the hover effect */
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .panel:hover {
@@ -44,6 +54,7 @@
     margin-bottom: 10px;
     font-size: 2rem;
     color: #FFFFFF; /* Added this line to change the headline color to white */
+    font-family: 'Poppins', sans-serif !important;
 }
 
 .panel p {
@@ -51,9 +62,11 @@
     font-size:1.5rem;
     line-height:1.5;
     color:#FFFFFF; /* Added this line to change the text color to white */
+    font-family: 'Poppins', sans-serif !important;
 }
 
 
 .read-more-button:hover {
     background-color:#0056b3;
+    font-family: 'Poppins', sans-serif !important;
 }

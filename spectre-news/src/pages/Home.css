@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .home-container {
   display: flex;
   flex-direction: column;
@@ -5,21 +12,23 @@
   justify-content: center;
   height: 100vh;
   text-align: center;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .content {
   margin-top: 2rem;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 h1 {
   font-size: 3.3rem;
+  font-family: 'Poppins', sans-serif !important;
 }
 
-.icon
-{
+.icon {
   margin-left: 5px;
   position: relative;
-  top: 2.5px
+  top: 2.5px;
 }
 
 p {
@@ -27,6 +36,7 @@ p {
   margin-right: 10vw;
   font-size: 1.4rem;
   margin-top: 1rem;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .cta-button {
@@ -39,17 +49,19 @@ p {
   cursor: pointer;
   transition-duration: 0.3s;
   text-decoration: none;
+  font-family: 'Poppins', sans-serif !important;
 }
 
-.cta-button:hover
-{
+.cta-button:hover {
   box-shadow: 0 0 10px #ee50e6;
 }
 
 .arrow-icon {
   margin-top: 1rem;
   font-size: 2rem;
+  font-family: 'Poppins', sans-serif !important;
 }
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -62,16 +74,6 @@ p {
   }
 }
 
-.home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 90vh;
-  text-align: center;
-  background-size: 200% 200%;
-  animation: gradient 5s ease infinite;
-}
 .background-video {
   position: absolute;
   width: 100%;
@@ -80,4 +82,5 @@ p {
   height: 100%;
   z-index: -1;
   object-fit: cover;
+  font-family: 'Poppins', sans-serif !important;
 }

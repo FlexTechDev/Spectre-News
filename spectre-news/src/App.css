@@ -1,8 +1,16 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('./fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .App {
   text-align: center;
   justify-content: center;
   position: absolute;
   width: 100vw;
   height: 100vh;
-  margin-top: 80px; /* Add this line to position the slider under the home bar */
+  margin-top: 80px; 
+  font-family: 'Poppins', sans-serif !important;
 }
