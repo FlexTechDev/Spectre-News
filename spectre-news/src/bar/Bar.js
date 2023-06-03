@@ -16,6 +16,22 @@ const Bar = ({ search, searchQuery, onSearchQueryChange }) => {
       setCurrentTime(formattedTime);
     };
 
+    // Add the Adsense script
+    const addAdsenseScript = () => {
+      try {
+        const script = document.createElement("script");
+        script.src =
+          "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3653401026918335";
+        script.async = true;
+        script.crossOrigin = "anonymous";
+        document.body.appendChild(script);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    addAdsenseScript();
+
     // Update date and time every second
     const timer = setInterval(() => {
       updateDateTime();
@@ -90,22 +106,32 @@ const Bar = ({ search, searchQuery, onSearchQueryChange }) => {
             <a className="nav-link">About</a>
             <div className="dropdown-content">
               <p>
-                SpectreNews is a news aggregator that filters news based on political bias using a custom-made neural network. Use the slider to filter Right, Left, or Neutral, News media
-              </p>
-            </div>
-          </div>
-          <Link to="/news" className="nav-link">
-            News
-          </Link>
-          <Link to="/contact" className="nav-link">
-            Contact
-          </Link>
-        </div>
-        <span className="date">{currentDate}</span>
-        <span className="time">{currentTime}</span>
-      </div>
-    );
-  }
+                SpectreNews is a news aggregator that filters news based on political bias using a custom-made neural network. Use the slider to filter Right, Left, or Neutral news media.
+</p>
+</div>
+</div>
+<Link to="/news" className="nav-link">
+News
+</Link>
+<Link to="/contact" className="nav-link">
+Contact
+</Link>
+</div>
+<div className="bar">
+<input
+className="search-input"
+type="text"
+placeholder="Search for topics..."
+value={searchQuery}
+onChange={(e) => onSearchQueryChange(e.target.value)}
+onKeyPress={handleKeyPress}
+/>
+</div>
+<span className="date">{currentDate}</span>
+<span className="time">{currentTime}</span>
+</div>
+);
+}
 };
 
 export default Bar;

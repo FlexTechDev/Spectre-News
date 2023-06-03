@@ -145,7 +145,7 @@
   font-size: 14px;
   font-weight: bold;
   color: rgb(217, 214, 214);
-  margin-left: 70px;
+  margin-left: 55px;
   margin-right: 20px;
   font-family: 'Poppins', sans-serif !important;
 }
@@ -153,7 +153,7 @@
 .time {
   font-size: 12px;
   color: rgb(199, 194, 194);
-  margin-left: 30px;
+  margin-left: 15px;
   margin-right: 20px;
   font-family: 'Poppins', sans-serif !important;
 }
