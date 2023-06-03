@@ -65,8 +65,8 @@
   width: 30%;
   padding: 10px;
   border-radius: 10px;
-  background-color: white;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px #a617e4;
   position: relative;
   margin-right: 20px;
 }
@@ -79,7 +79,9 @@
   border: none;
   outline: none;
   padding-right: 40px;
-  font-family: 'Poppins', sans-serif !important;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 .search-icon {
@@ -88,6 +90,7 @@
   font-size: 41px;
   color: #757575;
   cursor: pointer;
+  filter: drop-shadow(0 0 5px #a617e4);
 }
 
 .dropdown {
