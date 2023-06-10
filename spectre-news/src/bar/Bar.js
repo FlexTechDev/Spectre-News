@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const Bar = ({ search, searchQuery, onSearchQueryChange }) => {
   const [currentDate, setCurrentDate] = useState("");
   const [currentTime, setCurrentTime] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // new state for mobile menu open/close
 
   useEffect(() => {
     const updateDateTime = () => {
@@ -53,30 +54,40 @@ const Bar = ({ search, searchQuery, onSearchQueryChange }) => {
     onSearchQueryChange(searchQuery);
   };
 
+  const renderNavLinks = () => (
+    <>
+      <Link to="/" className="nav-link">
+        Home
+      </Link>
+      <Link to="/news" className="nav-link">
+        News
+      </Link>
+      <Link to="/contact" className="nav-link">
+        Contact
+      </Link>
+      <div className="dropdown">
+        <a className="nav-link">About</a>
+        <div className="dropdown-content">
+          <p>
+            SpectreNews is a news aggregator that filters news based on political bias using the power of GPT-4 Technology. Use the slider to filter Right, Left, or Neutral, News media.
+          </p>
+        </div>
+      </div>
+    </>
+  );
+
   if (search) {
     return (
       <div className="bar-container">
         <div className="app-name">
           SpectreNews <span className="beta-tag">BETA</span>
         </div>
-        <div className="navigation">
-          <Link to="/" className="nav-link">
-            Home
-          </Link>
-          <div className="dropdown">
-            <a className="nav-link">About</a>
-            <div className="dropdown-content">
-              <p>
-                SpectreNews is a news aggregator that filters news based on political bias using the power of OPENAI GPT-4 Technology. Use the slider to filter Right, Left, or Neutral, News media
-              </p>
-            </div>
-          </div>
-          <Link to="/news" className="nav-link">
-            News
-          </Link>
-          <Link to="/contact" className="nav-link">
-            Contact
-          </Link>
+        <div className="navigation desktop-navigation">
+          {renderNavLinks()}
+        </div>
+        <div className="mobile-nav">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="dropdown-button">Menu</button>
+          {isMenuOpen && <div className="dropdown-content">{renderNavLinks()}</div>}
         </div>
         <div className="bar">
           <input
@@ -98,24 +109,12 @@ const Bar = ({ search, searchQuery, onSearchQueryChange }) => {
         <div className="app-name">
           SpectreNews <span className="beta-tag">BETA</span>
         </div>
-        <div className="navigation">
-          <Link to="/" className="nav-link">
-            Home
-          </Link>
-          <div className="dropdown">
-            <a className="nav-link">About</a>
-            <div className="dropdown-content">
-              <p>
-                SpectreNews is a news aggregator that filters news based on political bias using a custom-made neural network. Use the slider to filter Right, Left, or Neutral news media.
-              </p>
-            </div>
-          </div>
-          <Link to="/news" className="nav-link">
-            News
-          </Link>
-          <Link to="/contact" className="nav-link">
-            Contact
-          </Link>
+        <div className="navigation desktop-navigation">
+          {renderNavLinks()}
+        </div>
+        <div className="mobile-nav">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="dropdown-button">Menu</button>
+          {isMenuOpen && <div className="dropdown-content">{renderNavLinks()}</div>}
         </div>
         <span className="date">{currentDate}</span>
         <span className="time">{currentTime}</span>

@@ -84,3 +84,42 @@ p {
   object-fit: cover;
   font-family: 'Poppins', sans-serif !important;
 }
+.cookie-consent-popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  font-family: 'Poppins', sans-serif !important;
+  color: #ffffff;
+}
+
+.cookie-consent-popup p {
+  margin: 0;
+  margin-right: 1rem;
+  display: inline-block;
+}
+
+.cookie-consent-popup button {
+  background-color: #ee50e6;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif !important;
+  transition-duration: 0.3s;
+  border-radius: 0.3rem;
+}
+
+.cookie-consent-popup button:hover {
+  background-color: #c83ad4;
+  box-shadow: 0 0 10px #ee50e6;
+}
