@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Bar from "../bar/Bar";
 import "./Home.css";
 import { FiArrowRightCircle } from "react-icons/fi";
@@ -7,7 +7,12 @@ import { Link } from "react-router-dom";
 const backgroundVideo = process.env.PUBLIC_URL + '/Moving (1) (1).mp4';
 
 function Home() {
-  const [acceptedCookies, setAcceptedCookies] = useState(localStorage.getItem('acceptedCookies') !== 'true' ? false : true);
+  const [acceptedCookies, setAcceptedCookies] = useState(false);
+
+  useEffect(() => {
+    const cookiesAccepted = localStorage.getItem('acceptedCookies');
+    setAcceptedCookies(cookiesAccepted === 'true');
+  }, []);
 
   const acceptCookies = () => {
     setAcceptedCookies(true);
@@ -16,7 +21,7 @@ function Home() {
 
   return (
     <div className="home-container">
-      <video autoPlay loop muted className="background-video">
+      <video autoPlay loop muted playsInline className="background-video">
         <source src={backgroundVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>

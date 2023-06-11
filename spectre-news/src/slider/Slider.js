@@ -1,7 +1,8 @@
 import React from 'react';
 import './Slider.css';
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 
-function Slider({onChange, value}) {
+function Slider({ onChange, value }) {
   const handleChange = (event) => {
     let value = parseInt(event.target.value, 10);
     let politicalView;
@@ -17,7 +18,7 @@ function Slider({onChange, value}) {
 
   return (
     <div className="slider-container">
-      <span className='left'>Left Media</span>
+      <span className='left'><BsArrowLeft /> Left Media</span>
       <input
         type="range"
         min="1"
@@ -26,7 +27,7 @@ function Slider({onChange, value}) {
         className="slider"
         onChange={handleChange}
       />
-      <span className='right'>Right Media</span>
+      <span className='right'>Right Media <BsArrowRight /></span>
     </div>
   );
 }

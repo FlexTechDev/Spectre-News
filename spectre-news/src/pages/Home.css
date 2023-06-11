@@ -10,7 +10,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: calc(100vh - 60px); /* Deducting the height of the bar */
+  padding-top: 60px; /* Equivalent to the height of the bar */
   text-align: center;
   font-family: 'Poppins', sans-serif !important;
 }
@@ -122,4 +123,44 @@ p {
 .cookie-consent-popup button:hover {
   background-color: #c83ad4;
   box-shadow: 0 0 10px #ee50e6;
+}
+@media screen and (max-width: 768px) {
+  .home-container.mobile {
+    align-items: stretch;
+    padding: 10px 10px 60px 10px; /* Padding bottom to accommodate bar at the bottom */
+    height: auto;
+  }
+
+  .content {
+    margin-top: -400px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    margin-left: 2vw;
+    margin-right: 2vw;
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+  }
+
+  .cookie-consent-popup {
+    font-size: 0.8rem;
+  }
+}
+.background-video {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  font-family: 'Poppins', sans-serif !important;
+  controls: none; /* Hide controls */
 }
