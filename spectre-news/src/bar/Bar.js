@@ -66,7 +66,7 @@ const Bar = ({ search, searchQuery, onSearchQueryChange }) => {
   return (
     <div className={`bar-container ${isMobileDevice ? "mobile" : ""}`}>
       <div className="app-name">
-        SpectreNews <span className="beta-tag">BETA</span>
+        SpectreNews <span className="beta-tag">Public Version 1.0</span>
       </div>
       {isMobileDevice && (
         <button onClick={toggleNav} className="nav-toggle-button">

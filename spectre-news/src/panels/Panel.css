@@ -44,9 +44,9 @@
     max-width: 100%;
     margin: 20% 4% 0; /* Adjust the margin values to move the panels down */
     width: 96%;
-    margin-bottom: 0px;
-    padding: 20px;
-    transform: scale(1.2); /* Adjust the scale value to zoom in */
+    margin-bottom: -30px;
+    padding: 10px;
+    transform: scale(1); /* Adjust the scale value to zoom in */
     transition: none !important; /* Remove any transition */
   }
 

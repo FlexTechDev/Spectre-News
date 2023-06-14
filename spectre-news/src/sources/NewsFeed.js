@@ -93,16 +93,16 @@ const NewsFeed = ({ searchQuery, politicalView }) => {
 
   const fetchAllNews = async () => {
     setIsLoading(true);
-
+  
     try {
       const newLeftArticles = shuffleArray(await fetchArticlesFromUrls(rssFeedUrls["left"]));
       const newCenterArticles = shuffleArray(await fetchArticlesFromUrls(rssFeedUrls["center"]));
       const newRightArticles = shuffleArray(await fetchArticlesFromUrls(rssFeedUrls["right"]));
-
+  
       setLeftArticles(newLeftArticles);
       setCenterArticles(newCenterArticles);
       setRightArticles(newRightArticles);
-
+  
       if (politicalView === "left") {
         setFilteredArticles(newLeftArticles);
       } else if (politicalView === "center") {
@@ -115,22 +115,17 @@ const NewsFeed = ({ searchQuery, politicalView }) => {
     } finally {
       setIsLoading(false);
     }
-  };
+  };  
 
   const fetchArticlesFromUrls = async (urls) => {
-    const articles = [];
-
-    for (let i = 0; i < urls.length; i++) {
-      const url = urls[i];
+    const fetchPromises = urls.map(async (url) => {
       const response = await fetch(url);
       const xmlText = await response.text();
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(xmlText, "text/xml");
       const items = xmlDoc.getElementsByTagName("item");
-
-      for (let j = 0; j < items.length; j++) {
-        const item = items[j];
-        
+  
+      const articles = Array.from(items).map((item) => {
         const titleElement = item.getElementsByTagName("title")[0];
         const descriptionElement = item.getElementsByTagName("description")[0];
         const linkElement = item.getElementsByTagName("link")[0];
@@ -140,13 +135,18 @@ const NewsFeed = ({ searchQuery, politicalView }) => {
         const description = descriptionElement ? descriptionElement.textContent : "";
         const link = linkElement ? linkElement.textContent : "";
         const thumbnail = thumbnailElement ? thumbnailElement.getAttribute("url") : null;
-
-        articles.push({ title, description, link, thumbnail });
-      }
-    }
-
-    return articles;
-  };
+  
+        return { title, description, link, thumbnail };
+      });
+  
+      return articles;
+    });
+  
+    const allArticles = await Promise.all(fetchPromises);
+  
+    // Flatten the array of arrays into a single array
+    return allArticles.flat();
+  };  
 
   const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {

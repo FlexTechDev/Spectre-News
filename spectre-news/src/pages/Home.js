@@ -29,7 +29,7 @@ function Home() {
       <div className="content">
         <h1>Welcome to SpectreNews</h1>
         <p>
-          SpectreNews is your go-to source for the latest and greatest news from around the world. Our team of dedicated developers has worked tirelessly to bring you the most important stories and insightful analysis, helping to filter the left, right, and neutral political biases for <strong>YOU</strong>.
+        Take charge of the political narrative with our cutting-edge platform. Use our unique slider feature to effortlessly filter biases and explore diverse perspectives on pressing issues. Customize your news feed for a well-rounded understanding, while preserving your individuality. SpectreNews puts the reins in your hands, empowering you to navigate politics with confidence and clarity, all tailored for <strong>YOU</strong>.
         </p>
         <Link to="/news" className="cta-button">
           Get Started <FiArrowRightCircle className="icon" />
