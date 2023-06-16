@@ -21,10 +21,6 @@ function Home() {
 
   return (
     <div className="home-container">
-      <video autoPlay loop muted playsInline className="background-video">
-        <source src={backgroundVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
       <Bar search={false} />
       <div className="content">
         <h1>Welcome to SpectreNews</h1>
@@ -41,6 +37,20 @@ function Home() {
           <button onClick={acceptCookies}>Accept</button>
         </div>
       )}
+      <div class="area" >
+            <ul class="circles">
+            <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
     </div>
   );
 }
