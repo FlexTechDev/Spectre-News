@@ -26,13 +26,13 @@ function Contact() {
       <div className="panel-teschner">
         <h2>Michael Teschner</h2>
         <p>A developer based out of St. Louis, MO. One of the Co-founders of SpectreNews.</p>
-        <p>Reach me at: msafmtesch@gmail.com</p>
+        <p>Reach me at: mteschner24@gmail.com</p>
       </div>
 
       <div className="panel-safar">
         <h2>Michael Safar</h2>
         <p>A developer based out of St. Louis, MO. One of the Co-founders of SpectreNews.</p>
-        <p>Reach me at: msafmtesch@gmail.com</p>
+        <p>Reach me at: michaelsafar024@gmail.com</p>
       </div>
     </div>
   );

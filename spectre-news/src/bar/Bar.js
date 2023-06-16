@@ -84,8 +84,7 @@ const Bar = ({ search, searchQuery, onSearchQueryChange }) => {
           <a className="nav-link">About</a>
           <div className="dropdown-content">
             <p>
-              SpectreNews is a news aggregator that filters news based on political bias using a custom-made neural
-              network. Use the slider to filter Right, Left, or Neutral news media.
+              SpectreNews is a news aggregator that filters news based on political bias. We use the official AllSides Media Bias Chart to categorize news sources and their content. Use the slider to filter Right, Left, or Central news media.
             </p>
           </div>
         </div>
