@@ -4,8 +4,6 @@ import "./Home.css";
 import { FiArrowRightCircle } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-const backgroundVideo = process.env.PUBLIC_URL + '/Moving (1) (1).mp4';
-
 function Home() {
   const [acceptedCookies, setAcceptedCookies] = useState(false);
 
