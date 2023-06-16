@@ -158,7 +158,6 @@ p {
 
 .area{
   background: #231b26;  
-  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
   position: absolute;
   width: 100%;
   left: 0;
