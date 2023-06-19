@@ -29,21 +29,6 @@ const Bar = ({ search, searchQuery, onSearchQueryChange }) => {
       setCurrentTime(formattedTime);
     };
 
-    const addAdsenseScript = () => {
-      try {
-        const script = document.createElement("script");
-        script.src =
-          "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3653401026918335";
-        script.async = true;
-        script.crossOrigin = "anonymous";
-        document.body.appendChild(script);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
-    addAdsenseScript();
-
     const timer = setInterval(() => {
       updateDateTime();
     }, 1000);
