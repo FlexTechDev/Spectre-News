@@ -120,6 +120,30 @@
   display: block;
 }
 
+.beta-tag {
+  position: relative;
+  display: inline-block;
+  padding: 2px 4px;
+  font-size: 10px;
+  color: #ee50e6;
+  background-color: rgba(238, 80, 230, 0.15);
+  border-radius: 6px;
+  margin-left: 2px;
+  top: -2px;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+@keyframes beta-breath {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(238, 80, 230, 0.4);
+  }
+  50% {
+    transform: scale(1.01);
+    box-shadow: 0 0 0 4px rgba(238, 80, 230, 0.4);
+  }
+}
+
 .date {
   font-size: 12px;
   font-weight: bold;

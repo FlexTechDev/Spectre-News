@@ -6,12 +6,9 @@ import Bar from "../bar/Bar";
 import "./Home.css";
 import { FiArrowRightCircle } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import useLockBodyScroll from "../pages/useLockBodyScroll"; // Path to useLockBodyScroll.js
 
 function Home() {
   const [acceptedCookies, setAcceptedCookies] = useState(false);
-
-  useLockBodyScroll(["/"]);  // Add other paths if needed
 
   useEffect(() => {
     const cookiesAccepted = localStorage.getItem("acceptedCookies");
