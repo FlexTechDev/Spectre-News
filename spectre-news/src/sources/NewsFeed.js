@@ -5,7 +5,9 @@ import ReactHtmlParser from 'html-react-parser';
 
 const NewsFeed = ({ searchQuery, politicalView }) => {
   const [leftArticles, setLeftArticles] = useState([]);
+  const [midLeftArticles, setMidLeftArticles] = useState([]);
   const [centerArticles, setCenterArticles] = useState([]);
+  const [midRightArticles, setMidRightArticles] = useState([]);
   const [rightArticles, setRightArticles] = useState([]);
   const [filteredArticles, setFilteredArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -28,6 +30,20 @@ const NewsFeed = ({ searchQuery, politicalView }) => {
       "https://rss.app/feeds/yphrbrN4e7iEOLGb.xml",
       "https://rss.app/feeds/cSIKEOsVnEntOkbo.xml",
     ],
+    'midleft': [
+      "https://rss.app/feeds/xufHYpYXSDNK4LH0.xml",
+     "https://rss.app/feeds/xlbxNFUcI9Z5miKW.xml",
+      "https://rss.app/feeds/DBn2CE28jKaPQrcX.xml",
+      "https://rss.app/feeds/MIDzDfgLlRYzlXEp.xml",
+      "https://rss.app/feeds/OE4RpgXMhNFj8nN7.xml",
+      "https://rss.app/feeds/jrOGcnhWXkRNLQ9D.xml",
+      "https://rss.app/feeds/2LQgBodvVKM6Q8xN.xml",
+      "https://rss.app/feeds/tj4IRVc7BvE6eN05.xml",
+      "https://rss.app/feeds/0WxIigm8JqcBpKPG.xml",
+      "https://rss.app/feeds/GBfUPahwpaiNQDum.xml",
+      "https://rss.app/feeds/jsOIyTy2GUegdozz.xml",
+      "https://rss.app/feeds/q852pLepzhnqjzHe.xml",
+    ],
     'center': [
       "https://rss.app/feeds/PCtv5x4ZhZ86M4fx.xml",
       "https://rss.app/feeds/4saEdrwdlWPSzRQs.xml",
@@ -37,9 +53,19 @@ const NewsFeed = ({ searchQuery, politicalView }) => {
       "https://rss.app/feeds/IDnv0TpWiNASL0rq.xml",
       "https://rss.app/feeds/qO1DQHYV7mMjui95.xml",
       "https://rss.app/feeds/unPCxuflO9qJJ6hR.xml",
-      "",
-      "",
     ],
+
+    'midright': [
+      "https://rss.app/feeds/1YySpYbjLqRhY0Ai.xml",
+      "https://rss.app/feeds/vDtomACkfPrX9Q1L.xml",
+      "https://rss.app/feeds/jYwtHM5JKbi2nMFF.xml",
+      "https://rss.app/feeds/qSdN8nl3A8xJ9Hfg.xml",
+      "https://rss.app/feeds/dcwWyxHijOn4hEFx.xml",
+      "https://rss.app/feeds/eAltMMib6y8juim7.xml",
+      "https://rss.app/feeds/whe7pkZgMjwFcIG4.xml",
+      "https://rss.app/feeds/9a2OreUJSbk6UZXO.xml",
+    ],
+
     'right': [
       "https://rss.app/feeds/i9F3VBuUbWCKZffM.xml",
       "https://rss.app/feeds/5t4s1q1dBeNHWdiH.xml",
@@ -64,7 +90,7 @@ const NewsFeed = ({ searchQuery, politicalView }) => {
 
   useEffect(() => {
     filterArticles();
-  }, [searchQuery, politicalView, leftArticles, centerArticles, rightArticles]);
+  }, [searchQuery, politicalView, leftArticles, midLeftArticles, centerArticles, midRightArticles, rightArticles]);
 
   const checkForAdblocker = () => {
     const test = document.createElement('div');
@@ -81,23 +107,26 @@ const NewsFeed = ({ searchQuery, politicalView }) => {
 
   const fetchAllNews = async () => {
     setIsLoading(true);
-
+  
     try {
       const newLeftArticles = await fetchArticlesFromUrls(rssFeedUrls["left"]);
+      const newMidLeftArticles = await fetchArticlesFromUrls(rssFeedUrls["midleft"]);
       const newCenterArticles = await fetchArticlesFromUrls(rssFeedUrls["center"]);
+      const newMidRightArticles = await fetchArticlesFromUrls(rssFeedUrls["midright"]);
       const newRightArticles = await fetchArticlesFromUrls(rssFeedUrls["right"]);
-
+  
+      // Randomize the order of articles
+      newLeftArticles.sort(() => Math.random() - 0.5);
+      newMidLeftArticles.sort(() => Math.random() - 0.5);
+      newCenterArticles.sort(() => Math.random() - 0.5);
+      newMidRightArticles.sort(() => Math.random() - 0.5);
+      newRightArticles.sort(() => Math.random() - 0.5);
+  
       setLeftArticles(newLeftArticles);
+      setMidLeftArticles(newMidLeftArticles);
       setCenterArticles(newCenterArticles);
+      setMidRightArticles(newMidRightArticles);
       setRightArticles(newRightArticles);
-
-      if (politicalView === "left") {
-        setFilteredArticles(newLeftArticles);
-      } else if (politicalView === "center") {
-        setFilteredArticles(newCenterArticles);
-      } else if (politicalView === "right") {
-        setFilteredArticles(newRightArticles);
-      }
     } catch (error) {
       console.error("Failed to fetch news:", error);
     } finally {
@@ -139,19 +168,26 @@ const NewsFeed = ({ searchQuery, politicalView }) => {
   const filterArticles = () => {
     let articles = [];
     if (politicalView === "left") {
-      articles = leftArticles;
+      articles = [...leftArticles];
+    } else if (politicalView === "midleft") {
+      articles = [...midLeftArticles];
     } else if (politicalView === "center") {
-      articles = centerArticles;
+      articles = [...centerArticles];
+    } else if (politicalView === "midright") {
+      articles = [...midRightArticles];
     } else if (politicalView === "right") {
-      articles = rightArticles;
+      articles = [...rightArticles];
     }
 
     const filtered = articles.filter((article) => {
       const regex = new RegExp(searchQuery, "i");
       return regex.test(article.title) || regex.test(article.description);
     });
-    setFilteredArticles(filtered);
-  };
+
+  filtered.sort(() => Math.random() - 0.5);
+
+  setFilteredArticles(filtered);
+};
 
   const handleImageLoad = () => {
     setKeyCounter((prevCounter) => prevCounter + 1);
