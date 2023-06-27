@@ -6,12 +6,29 @@ import { FiArrowRightCircle } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import ReactHtmlParser from 'html-react-parser';
 
-Modal.setAppElement('#root');  // add this line
+Modal.setAppElement('#root');
 
 function Home() {
   const [acceptedCookies, setAcceptedCookies] = useState(false);
-  const [modalIsOpen, setModalIsOpen] = useState(false);  // for modal
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
+  const customStyles = {
+    overlay: { backgroundColor: 'rgba(0, 0, 0, 0.5)' },
+    content: {
+      color: 'white',
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      padding: '1em',
+      borderRadius: '10px',
+      backgroundColor: '#333',
+      fontFamily: 'Poppins, sans-serif',  // Make sure you have imported 'Poppins' font in your project
+    },
+  };
+  
   useEffect(() => {
     const cookiesAccepted = localStorage.getItem("acceptedCookies");
     setAcceptedCookies(cookiesAccepted === "true");
@@ -32,6 +49,23 @@ function Home() {
       document.body.appendChild(script);
       return script;
     });
+
+    const customStyles = {
+      overlay: { backgroundColor: 'rgba(0, 0, 0, 0.5)' },
+      content: {
+        color: 'white',
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        padding: '1em',
+        borderRadius: '10px',
+        backgroundColor: '#333',
+        fontFamily: 'Poppins, sans-serif !important',  // added this
+      },
+    };
 
     // Set the body background color
     document.body.style.backgroundColor = '#231B26';
@@ -105,10 +139,7 @@ function Home() {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Donation Modal"
-        style={{
-          overlay: { backgroundColor: 'rgba(0, 0, 0, 0.5)' },
-          content: { color: 'white', top: '50%', left: '50%', right: 'auto', bottom: 'auto', marginRight: '-50%', transform: 'translate(-50%, -50%)', padding: '1em', borderRadius: '10px', backgroundColor: '#333' }
-        }}
+        style={customStyles}  // updated this
       >
         <h2 style={{ textAlign: 'center' }}>Help us keep SpectreNews running!</h2>
         <p style={{ textAlign: 'center' }}>Running a top-tier news site costs us a considerable amount of money! With your generous donation, you're not just helping us meet the financial demands of running this site; you're investing in the infrastructure that powers our operation and the innovations that keep us on the cutting edge. </p>
