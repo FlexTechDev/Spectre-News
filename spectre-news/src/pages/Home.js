@@ -87,15 +87,9 @@ function Home() {
   };
 
   const donationButton = `
-  <form action="https://www.paypal.com/donate" method="post" target="_top">
-  <input type="hidden" name="business" value="2H7PCQUULKCAQ" />
-  <input type="hidden" name="no_recurring" value="0" />
-  <input type="hidden" name="item_name" value="Please support our quality journalism and innovative infrastructure. Help us stay on the cutting edge! (Bob Stone=SpectreNews)" />
-  <input type="hidden" name="currency_code" value="USD" />
-  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-  <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-  </form>
-`;
+  <a style="background: #800080 url(https://donorbox.org/images/white_logo.svg) no-repeat 45px;color: #fff;text-decoration: none;font-family: Verdana,sans-serif;display: inline-block;font-size: 16px;padding: 15px 45px;padding-left: 70px;-webkit-border-radius: 8px;-moz-border-radius: 8px;border-radius: 8px;" href="https://donorbox.org/spectrenews?default_interval=o">Donate</a>
+  `;
+  
 
 
   // Close the modal
@@ -136,18 +130,17 @@ function Home() {
         </ul>
       </div>
       <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        contentLabel="Donation Modal"
-        style={customStyles}  // updated this
-      >
-        <h2 style={{ textAlign: 'center' }}>Help us keep SpectreNews running!</h2>
-        <p style={{ textAlign: 'center' }}>Running a top-tier news site costs us a considerable amount of money! With your generous donation, you're not just helping us meet the financial demands of running this site; you're investing in the infrastructure that powers our operation and the innovations that keep us on the cutting edge. </p>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>{ReactHtmlParser(donationButton)}</div>
-        <button className="no-thanks-button" onClick={closeModal} style={{ display: 'block', margin: '1em auto', padding: '0.5em 1em', background: 'purple', color: 'white', border: 'none', borderRadius: '5px' }}>No thanks, continue to SpectreNews</button>
-      </Modal>
+    isOpen={modalIsOpen}
+    onRequestClose={closeModal}
+    contentLabel="Donation Modal"
+    style={customStyles}
+  >
+    <h2 style={{ textAlign: 'center' }}>Help us keep SpectreNews running!</h2>
+    <p style={{ textAlign: 'center' }}>Running a top-tier news site costs us a considerable amount of money! With your generous donation, you're not just helping us meet the financial demands of running this site; you're investing in the infrastructure that powers our operation and the innovations that keep us on the cutting edge. </p>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>{ReactHtmlParser(donationButton)}</div>
+    <button className="no-thanks-button" onClick={closeModal} style={{ display: 'block', margin: '1em auto', padding: '0.5em 1em', background: 'purple', color: 'white', border: 'none', borderRadius: '5px' }}>No thanks, continue to SpectreNews</button>
+  </Modal>
     </div>
   );
-}
-
+      }
 export default Home;

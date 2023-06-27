@@ -1,0 +1,32 @@
+import React from "react";
+import { Helmet } from 'react-helmet';
+import Bar from "../bar/Bar";
+import AnimatedHeading from '../animatedHeading/AnimatedHeading';
+import './Contact.css';
+
+function Contact() {
+  return (
+    <div className="container">
+      <Helmet>
+        <script type="text/javascript" data-cfasync="false">
+          {/* Your script */}
+        </script>
+      </Helmet>
+
+      <Bar search={false} />
+
+      <AnimatedHeading text="Meet The Team" />
+
+      <div className="panel-safar">
+        {/* Your code */}
+      </div>
+
+      <div className="panel-teschner">
+        {/* Your code */}
+      </div>
+
+    </div>
+  );
+}
+
+export default Contact;
