@@ -65,7 +65,7 @@ function Home() {
         <p>
           Explore diverse perspectives on global issues. Navigate politics with clarity. Discover the truth. Let SpectreNews be <strong>YOUR</strong> guide.
         </p>
-        <Link to="/news" className="cta-button">
+        <Link to="/signup" className="cta-button">
           Get Started <FiArrowRightCircle className="icon" />
         </Link>
       </div>

@@ -250,5 +250,6 @@
     z-index: 2;
   }
 }
-
-
+.dropdown-content a:hover {
+  cursor: pointer;
+}

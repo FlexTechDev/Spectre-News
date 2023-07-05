@@ -2,13 +2,17 @@ import React, { useState, useEffect } from "react";
 import "./Bar.css";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
-import { FiX, FiMenu } from "react-icons/fi";
+import { FiX, FiMenu, FiUser } from "react-icons/fi";
+import { useNavigate } from "react-router-dom"; // replace useHistory with useNavigate
+import { auth } from "../firebase"; // Assuming you have a Firebase setup for authentication
 
 const Bar = ({ search, searchQuery, onSearchQueryChange }) => {
   const [currentDate, setCurrentDate] = useState("");
   const [currentTime, setCurrentTime] = useState("");
   const [isNavVisible, setIsNavVisible] = useState(false);
   const isMobileDevice = useMediaQuery({ query: "(max-width: 768px)" });
+
+  const navigate = useNavigate(); // replace useHistory with useNavigate
 
   const toggleNav = () => {
     setIsNavVisible(!isNavVisible);
@@ -48,6 +52,14 @@ const Bar = ({ search, searchQuery, onSearchQueryChange }) => {
     onSearchQueryChange(searchQuery);
   };
 
+  const handleLogout = () => {
+    auth.signOut()
+      .then(() => {
+        navigate("/"); // use navigate instead of history.push
+      })
+      .catch((error) => console.log(error));
+  }
+
   return (
     <div className={`bar-container ${isMobileDevice ? "mobile" : ""}`}>
       <div className="app-name">
@@ -76,6 +88,13 @@ const Bar = ({ search, searchQuery, onSearchQueryChange }) => {
         <Link to="/contact" className="nav-link" onClick={() => isMobileDevice && toggleNav()}>
           Contact
         </Link>
+        <div className="dropdown">
+          <FiUser className="nav-link account-icon"/>
+          <div className="dropdown-content">
+            <Link to="/account" className="dropdown-item" onClick={() => isMobileDevice && toggleNav()}>Account</Link>
+            <a onClick={handleLogout} className="dropdown-item">Logout</a>
+          </div>
+        </div>
       </div>
       {search && (
         <div className="bar">
