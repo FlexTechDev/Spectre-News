@@ -220,7 +220,7 @@ const NewsFeed = ({ searchQuery, politicalView }) => {
       </div>
     );
   } else {
-    return <div>No Articles Found...</div>;
+    return <div>No Articles Found... Please Reload the Page</div>;
   }
 };
 

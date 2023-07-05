@@ -35,21 +35,9 @@ function News() {
       script1.setAttribute("data-cfasync", "false");
       document.body.appendChild(script1);
 
-      const script2 = document.createElement("script");
-      script2.src = `http${window.location.protocol === 'https:' ? 's' : ''}://www.profitabledisplaynetwork.com/dd6a46b8d85a28885f98f9b92fd6736a/invoke.js`;
-      script2.async = true;
-      document.body.appendChild(script2);
-
-      const script3 = document.createElement("script");
-      script3.src = `http${window.location.protocol === 'https:' ? 's' : ''}://www.profitabledisplaynetwork.com/69c82b126df3d90aa8326437e8662cc6/invoke.js`;
-      script3.async = true;
-      document.body.appendChild(script3);
-
       // Remove the script elements when component unmounts
       return () => {
         document.body.removeChild(script1);
-        document.body.removeChild(script2);
-        document.body.removeChild(script3);
       };
     }
   }, [isLoadingAds]);

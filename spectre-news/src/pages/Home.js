@@ -25,58 +25,21 @@ function Home() {
       padding: '1em',
       borderRadius: '10px',
       backgroundColor: '#333',
-      fontFamily: 'Poppins, sans-serif',  // Make sure you have imported 'Poppins' font in your project
+      fontFamily: 'Poppins, sans-serif',
     },
   };
-  
+
   useEffect(() => {
     const cookiesAccepted = localStorage.getItem("acceptedCookies");
     setAcceptedCookies(cookiesAccepted === "true");
 
-    // Open the donation modal after component mount
     setTimeout(() => {
       setModalIsOpen(true);
-    }, 500);  // you can change this delay as per your need
+    }, 500); 
 
-    const scripts = [
-      "//pl19852507.highrevenuegate.com/236ead5eae305c8f12eeec7320450834/invoke.js",
-      `http${window.location.protocol === 'https:' ? 's' : ''}://www.profitabledisplaynetwork.com/dd6a46b8d85a28885f98f9b92fd6736a/invoke.js`,
-      `http${window.location.protocol === 'https:' ? 's' : ''}://www.profitabledisplaynetwork.com/69c82b126df3d90aa8326437e8662cc6/invoke.js`,
-    ].map((src) => {
-      const script = document.createElement("script");
-      script.src = src;
-      script.async = true;
-      document.body.appendChild(script);
-      return script;
-    });
-
-    const customStyles = {
-      overlay: { backgroundColor: 'rgba(0, 0, 0, 0.5)' },
-      content: {
-        color: 'white',
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-        padding: '1em',
-        borderRadius: '10px',
-        backgroundColor: '#333',
-        fontFamily: 'Poppins, sans-serif !important',  // added this
-      },
-    };
-
-    // Set the body background color
     document.body.style.backgroundColor = '#231B26';
 
-    // Remove the script elements when component unmounts
     return () => {
-      scripts.forEach((script) => {
-        document.body.removeChild(script);
-      });
-
-      // Reset the body background color
       document.body.style.backgroundColor = null;
     };
   }, []);
@@ -89,10 +52,7 @@ function Home() {
   const donationButton = `
   <a style="background: #800080 url(https://donorbox.org/images/white_logo.svg) no-repeat 45px;color: #fff;text-decoration: none;font-family: Verdana,sans-serif;display: inline-block;font-size: 16px;padding: 15px 45px;padding-left: 70px;-webkit-border-radius: 8px;-moz-border-radius: 8px;border-radius: 8px;" href="https://donorbox.org/spectrenews?default_interval=o">Donate</a>
   `;
-  
 
-
-  // Close the modal
   const closeModal = () => {
     setModalIsOpen(false);
   };
@@ -142,5 +102,5 @@ function Home() {
   </Modal>
     </div>
   );
-      }
+}
 export default Home;
