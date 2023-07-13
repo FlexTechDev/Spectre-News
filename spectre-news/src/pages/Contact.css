@@ -8,65 +8,92 @@
 .container {
   display: flex;
   margin-top: 10%;
-  justify-content: center;
-  flex-wrap: wrap;
-  justify-content: flex-start; /* Aligns items from the start */
-  align-items: stretch; /* Makes items fill the vertical space */
+  flex-direction: column;
+  align-items: center;
   font-family: 'Poppins', sans-serif !important;
 }
 
-.panel-safar {
+.panel-safar, .panel-teschner {
   text-align: center;
   border-radius: 10px;
   border: 1px solid #ee50e6;
   background-color: rgb(22, 22, 22);
   padding: 20px;
-  right: 2vw;
-  position: absolute;
-  max-width: 47%; /* Adjusted from 90% to 30% */
+  margin-bottom: 2vw;
+  width: 90%;
   box-shadow: 0 0 5px #a617e4;
-  box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
-  transition: transform 0.3s ease; /* Added this line for the hover effect */
+  box-sizing: border-box;
+  transform: scale(0);
+  opacity: 0;
+  animation: scaleIn 0.5s ease-in-out forwards;
+  animation-delay: 0.3s;
   font-family: 'Poppins', sans-serif !important;
 }
 
-.panel-teschner {
-  text-align: center;
-  border-radius: 10px;
-  background-color: rgb(22, 22, 22);
-  padding: 20px;
-  left: 2vw;
-  border: 1px solid #ee50e6;
-  max-width: 47%; /* Adjusted from 90% to 30% */
-  position: absolute;
-  box-shadow: 0 0 5px #a617e4;
-  box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
-  transition: transform 0.3s ease; /* Added this line for the hover effect */
-  font-family: 'Poppins', sans-serif !important;
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
-.panel:hover {
-    transform: scale(1.05); /* Added this block for the hover effect */
+.panel-safar h2, .panel-safar p, .panel-teschner h2, .panel-teschner p {
+  opacity: 0;
+  animation: fadeIn 3s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .panel h2 {
-    margin: 0;
-    margin-bottom: 10px;
-    font-size: 2rem;
-    color: #FFFFFF; /* Added this line to change the headline color to white */
-    font-family: 'Poppins', sans-serif !important;
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .panel p {
-    margin: 0;
-    font-size:1.5rem;
-    line-height:1.5;
-    color:#FFFFFF; /* Added this line to change the text color to white */
-    font-family: 'Poppins', sans-serif !important;
+  margin: 0;
+  font-size:1.5rem;
+  line-height:1.5;
+  color:#FFFFFF;
+  font-family: 'Poppins', sans-serif !important;
 }
 
-
 .read-more-button:hover {
-    background-color:#0056b3;
-    font-family: 'Poppins', sans-serif !important;
+  background-color:#0056b3;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.animated-heading {
+  font-size: 2.5em;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.animated-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-1em);
+  animation: appear 0.6s forwards var(--delay);
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-1em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

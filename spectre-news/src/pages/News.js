@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Bar from "../bar/Bar";
 import Slider from "../slider/Slider";
 import NewsFeed from "../sources/NewsFeed";
+import { getAuth, onAuthStateChanged } from "firebase/auth"; // Added this line
+import { useNavigate } from 'react-router-dom'; // Added this line
 
 function News() {
   const [searchQuery, setSearchQuery] = useState("");
   const [politicalView, setPoliticalView] = useState("center");
   const [acceptedCookies, setAcceptedCookies] = useState(localStorage.getItem('acceptedCookies') !== 'true' ? false : true);
+  const [isLoadingAds, setIsLoadingAds] = useState(true);
+  const [user, setUser] = useState(null); // Added this line
+  const navigate = useNavigate(); // Added this line
 
   const handleSliderChange = (newPoliticalView) => {
     setPoliticalView(newPoliticalView);
@@ -17,6 +22,44 @@ function News() {
     setAcceptedCookies(true);
     localStorage.setItem('acceptedCookies', 'true');
   };
+
+  useEffect(() => {
+    const delay = setTimeout(() => {
+      setIsLoadingAds(false);
+    }, 5000);
+
+    return () => clearTimeout(delay);
+  }, []);
+
+  useEffect(() => {
+    if (!isLoadingAds) {
+      const script1 = document.createElement("script");
+      script1.src = "//pl19852507.highrevenuegate.com/236ead5eae305c8f12eeec7320450834/invoke.js";
+      script1.async = true;
+      script1.setAttribute("data-cfasync", "false");
+      document.body.appendChild(script1);
+
+      // Remove the script elements when component unmounts
+      return () => {
+        document.body.removeChild(script1);
+      };
+    }
+  }, [isLoadingAds]);
+
+  useEffect(() => { // Added this block
+    const auth = getAuth();
+
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUser(currentUser);
+      } else {
+        navigate('/signin');
+      }
+    });
+
+    // Cleanup subscription on unmount
+    return () => unsubscribe();
+  }, [navigate]); // Added navigate as dependency
 
   return (
     <div>
@@ -31,6 +74,7 @@ function News() {
           <button onClick={acceptCookies}>Accept</button>
         </div>
       )}
+      {!isLoadingAds && <div id="container-236ead5eae305c8f12eeec7320450834"></div>}
     </div>
   );
 }
