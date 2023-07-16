@@ -3,8 +3,8 @@ import "./Bar.css";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { FiX, FiMenu, FiUser } from "react-icons/fi";
-import { useNavigate } from "react-router-dom"; // replace useHistory with useNavigate
-import { auth } from "../firebase"; // Assuming you have a Firebase setup for authentication
+import { useNavigate } from "react-router-dom";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 
 const Bar = ({ search, searchQuery, onSearchQueryChange }) => {
   const [currentDate, setCurrentDate] = useState("");
@@ -12,11 +12,14 @@ const Bar = ({ search, searchQuery, onSearchQueryChange }) => {
   const [isNavVisible, setIsNavVisible] = useState(false);
   const isMobileDevice = useMediaQuery({ query: "(max-width: 768px)" });
 
-  const navigate = useNavigate(); // replace useHistory with useNavigate
+  const navigate = useNavigate();
 
   const toggleNav = () => {
     setIsNavVisible(!isNavVisible);
   };
+
+  const [user, setUser] = useState(null);
+  const auth = getAuth();
 
   useEffect(() => {
     const updateDateTime = () => {
@@ -37,8 +40,13 @@ const Bar = ({ search, searchQuery, onSearchQueryChange }) => {
       updateDateTime();
     }, 1000);
 
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+
     return () => {
       clearInterval(timer);
+      unsubscribe();
     };
   }, []);
 
@@ -53,9 +61,9 @@ const Bar = ({ search, searchQuery, onSearchQueryChange }) => {
   };
 
   const handleLogout = () => {
-    auth.signOut()
+    signOut(auth)
       .then(() => {
-        navigate("/"); // use navigate instead of history.push
+        navigate("/");
       })
       .catch((error) => console.log(error));
   }
@@ -88,13 +96,15 @@ const Bar = ({ search, searchQuery, onSearchQueryChange }) => {
         <Link to="/contact" className="nav-link" onClick={() => isMobileDevice && toggleNav()}>
           Contact
         </Link>
-        <div className="dropdown">
-          <FiUser className="nav-link account-icon"/>
-          <div className="dropdown-content">
-            <Link to="/account" className="dropdown-item" onClick={() => isMobileDevice && toggleNav()}>Account</Link>
-            <a onClick={handleLogout} className="dropdown-item">Logout</a>
+        {user && (
+          <div className="dropdown">
+            <FiUser className="nav-link account-icon"/>
+            <div className="dropdown-content">
+              <Link to="/account" className="dropdown-item" onClick={() => isMobileDevice && toggleNav()}>Account</Link>
+              <a onClick={handleLogout} className="dropdown-item" style={{ cursor: 'pointer' }}></a>
+            </div>
           </div>
-        </div>
+        )}
       </div>
       {search && (
         <div className="bar">

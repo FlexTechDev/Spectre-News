@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'; // ensure correct import path
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect, signOut } from 'firebase/auth';
 import { auth } from './firebase';
 import { useNavigate, Link } from 'react-router-dom';
 import './SignIn.css';
@@ -24,11 +24,19 @@ const SignIn = () => {
     }
   };
 
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.log("Error signing out: ", error);
+    }
+  };
+
   const handleSignInWithGoogle = async () => {
     try {
+      await handleSignOut();
       const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
-      navigate('/news');
+      await signInWithRedirect(auth, provider);
     } catch (error) {
       setError(error.message);
     }
@@ -57,7 +65,10 @@ const SignIn = () => {
           onChange={e => setPassword(e.target.value)}
         />
         <button type="submit">Sign In</button>
-        <button type="button" onClick={handleSignInWithGoogle}>Continue with Google</button>
+        <button type="button" className="google-btn" onClick={handleSignInWithGoogle}>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Logo" height="18px" style={{marginRight: '10px'}}/>
+          Continue with Google
+        </button>
       </form>
       {error && <p>{error}</p>}
       <p>Don't have an account? <Link className="link" to="/signup">Sign Up</Link></p>

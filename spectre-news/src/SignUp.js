@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect, signOut } from 'firebase/auth';
 import { auth } from './firebase';
 import { useNavigate, Link } from 'react-router-dom';
-import './SignUp.css'; 
+import './SignUp.css';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
@@ -24,11 +24,19 @@ const SignUp = () => {
     }
   };
 
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.log("Error signing out: ", error);
+    }
+  };
+
   const handleSignUpWithGoogle = async () => {
     try {
+      await handleSignOut();
       const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
-      navigate('/news');
+      await signInWithRedirect(auth, provider);
     } catch (error) {
       setError(error.message);
     }
@@ -57,7 +65,10 @@ const SignUp = () => {
           onChange={e => setPassword(e.target.value)}
         />
         <button type="submit">Sign Up</button>
-        <button type="button" onClick={handleSignUpWithGoogle}>Continue with Google</button>
+        <button type="button" className="google-btn" onClick={handleSignUpWithGoogle}>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Logo" height="18px" style={{marginRight: '10px'}}/>
+          Continue with Google
+        </button>
       </form>
       {error && <p>{error}</p>}
       <p>Already have an account? <Link className="link" to="/signin">Sign In</Link></p>

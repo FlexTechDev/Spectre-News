@@ -1,0 +1,56 @@
+.account-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .account-header {
+    font-size: 2em;
+    color: rgb(227, 227, 227);
+    margin-bottom: 20px;
+  }
+  
+  .back-button {
+    align-self: flex-start;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    background: none;
+    border: none;
+    color: rgb(250, 250, 250);
+    cursor: pointer;
+  }
+  
+  .account-email {
+    color: rgb(235, 233, 233);
+    margin-bottom: 20px;
+  }
+  
+  .account-button {
+    color: #fff;
+    margin: 10px 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .account-button:nth-child(4) {
+    background: #963737; /* Purple */
+  }
+  
+  .account-button:nth-child(5) {
+    background: #8B0000; /* Dark Red */
+  }
+  
+  .account-button:nth-child(6) {
+    background: #9370DB; /* Greyish Purple */
+  }
+  
+  /* Hover effect for buttons */
+  .account-button:hover {
+    background: rgb(255, 0, 0); /* Change the background color on hover */
+    color: #fff; /* Change the text color on hover */
+  }
+  

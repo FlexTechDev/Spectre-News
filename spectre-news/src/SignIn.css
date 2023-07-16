@@ -1,51 +1,73 @@
 .signin-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #333;
-  }
-  
-  .signin-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* increase space between inputs */
-    border: 3px solid purple;
-    padding: 40px; /* increase padding */
-    border-radius: 10px;
-    box-shadow: 0 0 10px purple;
-    background-color: #444;
-    width: 50%; /* set width as a percentage of the parent container */
-    max-width: 500px; /* limit max width to maintain responsiveness */
-  }
-  
-  .signin-container input {
-    padding: 15px; /* increase padding */
-    border-radius: 5px;
-    border: none;
-    background-color: white;
-    font-size: 18px; /* increase font size */
-  }
-  
-  .signin-container button {
-    padding: 15px; /* increase padding */
-    color: white;
-    background-color: purple;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px; /* increase font size */
-  }
-  
-  .signin-container button:hover {
-    background-color: #a020f0;
-  }
-  .link {
-    color: purple;
-    text-decoration: none;
-  }
-  .link:hover {
-    color: #a020f0;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #292b30;
+  padding-top: 20px;
+}
+
+.signin-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 3px solid purple;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px purple;
+  background-color: #444;
+  width: 90%;
+  max-width: 500px;
+  margin: 20px;
+}
+
+.signin-container input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: white;
+  font-size: 16px;
+}
+
+.signin-container button {
+  padding: 10px;
+  color: white;
+  background-color: purple;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.signin-container button:hover {
+  background-color: #a020f0;
+}
+
+.signin-container .google-btn {
+  background: #f9fbfd;
+  color: rgb(88, 86, 86);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  height: 36px;
+  padding: 0 24px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid rgb(205, 208, 212);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.signin-container .google-btn:hover {
+  box-shadow: 0 0 6px #4285f4;
+}
+
+.link {
+  color: rgb(38, 0, 128);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #205ef0;
+}

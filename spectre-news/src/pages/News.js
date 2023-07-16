@@ -9,7 +9,6 @@ function News() {
   const [searchQuery, setSearchQuery] = useState("");
   const [politicalView, setPoliticalView] = useState("center");
   const [acceptedCookies, setAcceptedCookies] = useState(localStorage.getItem('acceptedCookies') !== 'true' ? false : true);
-  const [isLoadingAds, setIsLoadingAds] = useState(true);
   const [user, setUser] = useState(null); // Added this line
   const navigate = useNavigate(); // Added this line
 
@@ -22,29 +21,6 @@ function News() {
     setAcceptedCookies(true);
     localStorage.setItem('acceptedCookies', 'true');
   };
-
-  useEffect(() => {
-    const delay = setTimeout(() => {
-      setIsLoadingAds(false);
-    }, 5000);
-
-    return () => clearTimeout(delay);
-  }, []);
-
-  useEffect(() => {
-    if (!isLoadingAds) {
-      const script1 = document.createElement("script");
-      script1.src = "//pl19852507.highrevenuegate.com/236ead5eae305c8f12eeec7320450834/invoke.js";
-      script1.async = true;
-      script1.setAttribute("data-cfasync", "false");
-      document.body.appendChild(script1);
-
-      // Remove the script elements when component unmounts
-      return () => {
-        document.body.removeChild(script1);
-      };
-    }
-  }, [isLoadingAds]);
 
   useEffect(() => { // Added this block
     const auth = getAuth();
@@ -74,7 +50,6 @@ function News() {
           <button onClick={acceptCookies}>Accept</button>
         </div>
       )}
-      {!isLoadingAds && <div id="container-236ead5eae305c8f12eeec7320450834"></div>}
     </div>
   );
 }
