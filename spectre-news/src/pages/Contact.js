@@ -7,10 +7,6 @@ import AnimatedHeading from "../pages/AnimatedHeading";
 function Contact() {
   return (
     <div className="container">
-      <Helmet>
-        <title>Contact - SpectreNews</title>
-      </Helmet>
-
       <Bar search={false} />
 
       <AnimatedHeading text="Meet the Team" />
